@@ -48,6 +48,7 @@
 \newcommand{\tdots}{t_{dots}}
 \newcommand{\gammaA}[1]{\gamma_{A,#1}}
 \newcommand{\gammaB}[1]{\gamma_{B,#1}}
+\newcommand{\GreenG}[2]{G_{#1}^{ #2} (\omega) }
 %\newcommand{\bra}[3]{\langle {#3} \vert}
 
 \newcommand{\super}{\vert \Delta \vert}
@@ -160,11 +161,11 @@ A promising method to detect majorana modes consists in attaching a Quantum Dot 
 
 
 
-We consider the setup shown in Figure \ref{fig:GenModel} in which a Majorana Bound State (MBS) at the edge of Topological Superconductor(TS) is coupled to a double quantum dot (DQD), which is attached to a single metallic lead. The Hamiltonian of this system can be expressed as a sum of four terms: the DQD Hamiltonian $H_{DQD}$ , the Lead Hamiltonian $H_{Lead}$ and the interaction that couples the DQD with the Majorana mode $H_{M-DQDs}$ and  with the lead $H_{DQD-Lead}$. 
+We consider the setup shown in Figure \ref{fig:GenModel} in which a Majorana Bound State (MBS) at the edge of Topological Superconductor(TS) is coupled to a double quantum dot (DQD), which is attached to a single metallic lead. The Hamiltonian of this system can be partitioned in four terms: the DQD Hamiltonian $H_{DQD}$ , the Lead Hamiltonian $H_{Lead}$ , the DQD-lead interaction  $H_{DQD-Lead}$ and the coupling between the DQD and the Majorana mode $H_{M-DQDs}$ and   
 
 \begin{equation}
-H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQDs} 
-\label{eq:Ham}
+H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQD} 
+\label{eq:Model}
 \end{equation}
 
 
@@ -172,7 +173,7 @@ H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQDs}
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.4]{Graficos/Model.png}
-\caption{ DQD-Majorana set-up. Solid lines represent standard coupling interactions. Dashed lines represent majorana spin-$\dw$ effective couplings \eqref{eq:Majorana-ham}. The atomic-limit energy levels are plotted inside each QD. $\ed{i}$ is the particle's energy inside QD$i$ and $U_i$ is the corresponding coulomb potential. The red dashed lines represent the Fermi level.  
+\caption{ DQD-Majorana set-up. Solid lines: standard coupling. Dashed lines: majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD}. The atomic energy levels appear inside each QD. Red dashed lines represent the Fermi level.  
 }
 %
 \label{fig:GenModel}
@@ -181,56 +182,65 @@ H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQDs}
 %-----------E N D  F I G U R E  1 ------
 
 
-For the DQD-lead system, we can implement the Anderson Model so that 
+The interacting Anderson Model describes the DQD-lead system  
 %d_{i\sigma}^{\dagger}d_{i\sigma}
-\begin{align*}
-H_{DQD}=& \sum_{\sigma} \sum_{i\in\{1,2\}}\left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}+ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2} \\
-&\ \ \ \ \ + \sum_{\sigma \in \{\up , \dw\}} \tdots(\dann_{1\sigma}  d_{2\sigma}+\dann_{2\sigma}  d_{1\sigma}),
-\end{align*}
+\begin{align}
+\begin{split}
+    H_{DQD}=&  \sum_{i\in\{1,2\}} \sum_{\sigma\in \{ \dw , \up\}}  \left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}+ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2} \\ 
+&\ \ \ \ \ + \sum_{\sigma \in \{\up , \dw\}} \tdots(\dann_{1\sigma}  d_{2\sigma}+\dann_{2\sigma}  d_{1\sigma}), \label{eq:H_DQD}
+\end{split}
+\end{align}
+
+and 
+\begin{eqnarray}
+H_{Lead} & = & \sum_{\mathbf{k}\sigma }\epsilon_{\mathbf{k}}c_{\mathbf{k}\sigma }^{\dagger}c_{\mathbf{k}\sigma } \label{eq:H_L}\\ 
+H_{DQD-Lead} & = &  \sum_{\mathbf{k}\sigma }\sum_{i\in\{1,2\}}V_{i\textbf{k}} c_{\mathbf{k}\sigma }^{\dagger}d_{i\sigma}+V^*_{i\textbf{k}} d_{i\sigma}^{\dagger}c_{\mathbf{k}\sigma }  \label{eq:H_DQDL},
+\end{eqnarray}
 %
-where $\ed{i}$ represents the energy level of each QD, $U_i$ is the Coulomb repulsion and $\tdots$ is the coupling between both QDs. In addition the operator $\dann_{i\sigma}$ creates a particle in dot $i$ with spin $\sigma$ and $\hat{n}_{i\sigma}:=d_{i\sigma}^{\dagger}d_{i\sigma}$ is the particle number operator of this state. On the other hand, the interaction with the Lead is described by 
+where $\ed{i}$ is the energy level of Dot $i$, $U_i$ is the Coulomb repulsion and $\tdots$ is the coupling parameter between both QDs. The operator $\dann_{i\sigma}$ creates a particle in Dot $i$ with spin $\sigma$ and $\hat{n}_{i\sigma}:=d_{i\sigma}^{\dagger}d_{i\sigma}$ is the particle number operator of state $i$.  $c_{\mathbf{k}\sigma }^{\dagger}$ is the creation operator a particle with momentum $\mathbf{k}$ and spin
+$\sigma$ in the lead.  $\epsilon_{\mathbf{k}l}$ is the corresponding energy
+ and $V_i(\textbf{k})$ describes the tunneling coupling between the lead and Dot $i$ . \\
 
-\LUIS{Pls add a ``label'' to EVERY equation and EVERY figure.}
+% To model the interaction between the DQD and the Majorana Mode we define the majorana operators as the
 
-\begin{eqnarray*}
-H_{Lead} & = & \sum_{\mathbf{k}\sigma }\epsilon_{\mathbf{k}}c_{\mathbf{k}\sigma }^{\dagger}c_{\mathbf{k}\sigma }\\
-H_{DQD-Lead} & = &  \sum_{\mathbf{k}\sigma }\sum_{i\in\{1,2\}}V_{i\textbf{k}} c_{\mathbf{k}\sigma }^{\dagger}d_{i\sigma}+V^*_{i\textbf{k}} d_{i\sigma}^{\dagger}c_{\mathbf{k}\sigma },
-\end{eqnarray*}
-%
-with the $\mathbf{k}$-sum performed over the lead's band.  Hence $c_{\mathbf{k}\sigma }^{\dagger}$ is the creation operator a particle with momentum $\mathbf{k}$ and spin
-$\sigma$ in the lead, $\epsilon_{\mathbf{k}l}$ is the energy
-of the lead's particles and $V_i$ describes the hopping interaction
-term between the lead each $QD$ . \\
+The majorana modes are modeled as a superposition of the creation and annihilation operators of a spin $\dw$ particle $f_\dw$
+\begin{equation}
+    \gamma_1 := \frac{1}{\sqrt{2}} \left( f^\dagger_{\dw} + f_{\dw}\ \right) , \gamma_2 := \frac{i}{\sqrt{2}} \left( f^\dagger_{\dw} - f_{\dw} \right). \label{eq:MajOp}
+\end{equation}
 
-To model the interaction between the DQD and the Majorana Mode we define the majorana operators as the  superposition of the creation and annihilation operators of a spin $\dw$ particle $f_\dw$:
 
-$$\gamma_1 := \frac{1}{\sqrt{2}} \left( f^\dagger_{\dw} + f_{\dw}\ \right) , \gamma_2 := \frac{1}{\sqrt{2}} \left( f^\dagger_{\dw} - f_{\dw} \right).$$
 This makes possible to define an effective coupling between the Majorana Mode and the DQD by attaching $\gamma_1$ with the spin-$\dw$ channel in the QDs
 
 %H_{TS} & = & 2\epsilon_{m}\gamma_{1}\gamma_{2}\nonumber \\
 \begin{eqnarray}
-H_{M-DQD} & = &  \sum_{i}t_{i} \left(d_{i\downarrow}^{\dagger}\gamma_{1}+\gamma_{1}d_{i\downarrow}\right) 
+H_{M-DQD} & = &  \sum_{i=1}^2t_{i} \left(d_{i\downarrow}^{\dagger}\gamma_{1}+\gamma_{1}d_{i\downarrow}\right) + \epsilon_M \gamma_1\gamma_2. 
 % \\
 % & = &  \sum_{i}t_{i} \left(d_{i\downarrow}^{\dagger}f^\dagger_{\dw} + 
 % f_{\downarrow}d_{i\dw} +d_{i\downarrow}^{\dagger}f_{\dw}+
 % +f_{\downarrow}^{\dagger} d_{i\downarrow}\right).
-\label{eq:Majorana-ham}
+\label{eq:H_MDQD}
 \end{eqnarray}
+where $t_i$ is the coupling parameter between the majorana mode and QD $i$. $\epsilon_m$ is the coupling energy between both majorana modes.  
 
 
 
 
-\begin{equation}
-    \omega\Green{A,B}&=\delta_{A^{\dagger},B}+\Green{\left[A,H\right],B}
-\end{equation}
+% \begin{equation}
+%     \omega\Green{A,B}&=\delta_{A^{\dagger},B}+\Green{\left[A,H\right],B}
+% \end{equation}
 
-\Jesus{Should I put the other terms? }
+% \Jesus{Should I put the other terms? }
 
 
-This effective coupling represents the single majorana mode at the edge of the TS attached to the QD. \citeauthor{ruiz-tijerina_interaction_2015}  proved that the interaction \eqref{eq:Majorana-ham} is able to reproduce effectively the results obtained when the Kitaev chain in the topological phase is attached to a single QD.  \\
+\citeauthor{ruiz-tijerina_interaction_2015}  showed that this effective coupling  is able to reproduce effectively the results obtained when the Kitaev chain in the topological phase is attached to a single QD.  \\
  
 % ---------------------------------------------------
 \subsection{Methods}
+With ballistic transport we found the Green function associated to the first dot  $\Green{d_1d^\dagger_1}$  to be 
+
+
+
+associated to
 \begin{equation}
     \rho_{i\sigma}(\omega)= \frac{-i}{\pi}\mathcal{I}\left[ \mathcal{G}^R_{i\sigma}(\omega) \right],
     \label{eq:SpectralFunction}
@@ -431,13 +441,38 @@ The authors thank Edson Vernek for enlightening discussions.  L.G.G.V.D.S. ackno
 %\addcontentsline{toc}{section}{\textbf{References}}
 \bibliography{Majorana_DQD}
 
+ \appendix
+ 
+ 
+\begin{widetext}
+\begin{equation}
+    \GreenG{d_{1\downarrow},d_{1\downarrow}^{\dagger}}{\MDQD}=\left[\left(\GreenG{d_{1\downarrow},d_{1\downarrow}^{\dagger}}{\GDQD } \right)^{-1}+\frac{\omega}{\omega+\epsilon_{M}}\frac{E_{d_{1\dw}f_{\dw}}^{\MDQD}}{\left[\GreenG{f_{\downarrow},f_{\downarrow}^{\dagger}}{\MDQD-d_{1}}\right]^{-1}}\right]^{-1}.
+\end{equation}
+where 
+\begin{equation}
+    E_{d_{1\dw}f_{\dw}}^{\MDQD}=\left(t_{1}+t_{2}\frac{\left(t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}\right)\left(t_{1}^{*}+t_{2}^{*}\frac{\left(t_{dots}^{*}+\sum_{\mathbf{k}}\frac{V_{1}^{*}V_{2}}{\omega-\epsilon_{\mathbf{k}}}\right)}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}^{*}V_{2}}{\omega-\epsilon_{\mathbf{k}}}}\right).
+\end{equation}
+\Jesus{This fact is difficult to explain. I will need more plots and writing the appendix. For now I will leave here some results}
 
+We then need to compute $\GreenG{f_{\downarrow},f_{\downarrow}^{\dagger}}{\MDQD-d_{1}}$ . This graph is much simple. The neighborhood of  $f_{\downarrow}$ in graph ${\MDQD-d_{1}}$ are $d_2$ (above) and the inverted DQD(bellow). These neighbors are disconnected, hence we can include the in the green function independently. The term above is simply the dot $d_{2\downarrow}$ connected with the lead . 
+\begin{equation}
+    \frac{\frac{\omega}{\omega+\epsilon_{M}}\left\Vert t_{2}\right\Vert ^{2}}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}.
+\end{equation}
+
+ 
+The term generated by the connection of $f_{\downarrow}$  with the inverted $DQD$ is a bit more complicated. First we need to include the term given by the connection with  $d_{2\downarrow}^\dagger$ which is 
+
+The other term is the contact with the DQD which can be expressed as 
+\begin{equation}
+    \GreenG{f_{\downarrow},f_{\downarrow}^{\dagger}}{\MDQD-d_{1}}=\left[\omega-\epsilon_{M}-\frac{\frac{\omega}{\omega+\epsilon_{M}}\left\Vert t_{2}\right\Vert ^{2}}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}-\frac{\frac{\omega}{\omega+\epsilon_{M}}\left\Vert t_{2}\right\Vert ^{2}}{\omega+\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega+\epsilon_{\mathbf{k}}}}-\frac{\omega}{\omega+\epsilon_{M}}\frac{E_{f_{\dw}d_{1\dw}^\dagger}^{\MDQD-d_1}}{\left[\GreenG{d_{1\downarrow}^{\dagger},d_{1\downarrow}{\dagger}}{\MDQD-d_{1}-f_{\downarrow}}\right]^{-1}}\right]^{-1}.
+\end{equation}
+Now, note that that graph $\MDQD-d_{1}-f_{\downarrow}$ is actually a double quantum dot with negated couplings. Hence 
+\end{widetext}
 
 
 \end{document}
 
 
-% \appendix
 
 % \section{Atomic limit: Change of basis}
 % Returning to Hamiltonian \eqref{eq:AtomicHam} the change of basis is given by 
