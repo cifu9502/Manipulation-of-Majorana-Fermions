@@ -48,6 +48,8 @@
 \newcommand{\tdots}{t_{dots}}
 \newcommand{\gammaA}[1]{\gamma_{A,#1}}
 \newcommand{\gammaB}[1]{\gamma_{B,#1}}
+\newcommand{\Green}[1]{G_{#1}(\omega) }
+
 \newcommand{\GreenG}[2]{G_{#1}^{ #2} (\omega) }
 %\newcommand{\bra}[3]{\langle {#3} \vert}
 
@@ -173,7 +175,7 @@ H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQD}
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.4]{Graficos/Model.png}
-\caption{ DQD-Majorana set-up. Solid lines: standard coupling. Dashed lines: majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD}. The atomic energy levels appear inside each QD. Red dashed lines represent the Fermi level.  
+\caption{ DQD-Majorana set-up. Solid lines: standard coupling. Dashed lines: majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD}. The atomic energy levels appear inside each QD. Red dashed horizontal lines represent the Fermi level.  
 }
 %
 \label{fig:GenModel}
@@ -220,7 +222,9 @@ H_{M-DQD} & = &  \sum_{i=1}^2t_{i} \left(d_{i\downarrow}^{\dagger}\gamma_{1}+\ga
 % +f_{\downarrow}^{\dagger} d_{i\downarrow}\right).
 \label{eq:H_MDQD}
 \end{eqnarray}
-where $t_i$ is the coupling parameter between the majorana mode and QD $i$. $\epsilon_m$ is the coupling energy between both majorana modes.  
+where $t_i$ is the coupling parameter between the majorana mode and QD $i$. $\epsilon_m$ is the coupling energy between both majorana modes. This effective model is able to reproduce the physical effects of more elaborated couplings \cite{ruiz-tijerina_interaction_2015} such 
+
+\citeauthor{ruiz-tijerina_interaction_2015}  showed that this effective coupling  is able to reproduce effectively the transport effects of  the Kitaev chain in the topological phase is attached to a single QD.  \\
 
 
 
@@ -232,19 +236,22 @@ where $t_i$ is the coupling parameter between the majorana mode and QD $i$. $\ep
 % \Jesus{Should I put the other terms? }
 
 
-\citeauthor{ruiz-tijerina_interaction_2015}  showed that this effective coupling  is able to reproduce effectively the results obtained when the Kitaev chain in the topological phase is attached to a single QD.  \\
+
  
 % ---------------------------------------------------
 \subsection{Methods}
-With ballistic transport we found the Green function associated to the first dot  $\Green{d_1d^\dagger_1}$  to be 
-
-
-
-associated to
+For the non-interacting case $(U=0)$, we use the ballistic transport approach \cite{} to compute the Green functions associated to both quantum dot operators $\Green{d_id^\dagger_i}$. 
 \begin{equation}
-    \rho_{i\sigma}(\omega)= \frac{-i}{\pi}\mathcal{I}\left[ \mathcal{G}^R_{i\sigma}(\omega) \right],
-    \label{eq:SpectralFunction}
+  \Green{A,B}= \mathcal{F}\left\{ \mathcal{T}\left[\left\{ A(t),B(t')\right\} \right]\right\} \left(\omega\right),
+  \label{eq:greenFunction}
 \end{equation}
+\noindent with $\mathcal{F}$ denoting the Fourier transform. The density of states is 
+\begin{equation}
+    \rho_{A,A^\dagger}=-\frac{1}{\pi}Im\left[\Green{A,A^\dagger}\right].
+    \label{eq:Density of States}
+\end{equation}
+
+
 
 
 
@@ -411,6 +418,103 @@ In \ref{fig:2D/Shift_ed2} we observe that both, the Kondo and the MZM peaks are 
 \end{figure}
 
 
+Solving the transport equations involves dealing with a set of linear equations where all the possible variables including  $\omega$ , and the Hamiltonian parameters are assumed to be constant.  This can be done by  Gauss-Jordan elimination, noting that after each elimination process we need to carry on the account in terms of these variables. The solution  will be a polynomial fraction with the variable given by these parameters.  When the number of operators in the Hamiltonian increases the number of terms in the polynomial grows-up exponentially. This reveals the importance of exploring new methods that could simplify the solution.   \\
+
+The method presented here uses graph theory algorithms that provide a shortcut to Gauss-Jordan elimination \cite{spielman10}. To probe this method we solve here the transport equations for a non-interacting $(U=0)$ DQD connected to one lead. According to the Anderson model the Hamiltonian for this system looks like 
+\begin{equation}
+    H=t_{dots}d_{1}^{\dagger}d_{2}+t_{dots}^*d_{2}^{\dagger}d_{1}+ \sum_{i=1}^2\epsilon_{di}d_{i}^{\dagger}d_{i}+\sum_{k}\left(V_{i}d_{i}^{\dagger}c_{\mathbf{k}}+V_{i}^{*}c_{\mathbf{k}}^{\dagger}d_{i}\right) + \epsilon_{\mathbf{k}}c_{\mathbf{k}}^{\dagger}c_{\mathbf{k}}.
+    \label{HDQD}
+\end{equation} 
+Since the system is non-interacting we ignore the spin-degeneracy of this Hamiltonian. The only new parameter here is the term $t_{dots}$, which represents the tunneling between both quantum dots.  Using equation \eqref{eq:Transport} with $B = d_1^\dagger$ and $A$ shifting among other operators we compute the following  transport equations
+\begin{align}
+     \left(\omega-\epsilon_{1}\right)\Green{d_{1},d_{1}^{\dagger}}&=1+t_{dots}\Green{d_{2},d_{1}^{\dagger}}+V_{1}^{*}\sum_{\mathbf{k}}\Green{c_{\mathbf{k}},d_{1}^{\dagger}} \label{eq:green1}  \\
+     \left(\omega-\epsilon_{\mathbf{k}}\right)\Green{c_{\mathbf{k}},d_{1}^{\dagger}} &= V_{1}\Green{d_{1},d_{1}^{\dagger}}+V_{2}\Green{d_{2},d_{1}^{\dagger}} \label{eq:green2} \\
+     \left(\omega-\epsilon_{2}\right)\Green{d_{2},d_{1}^{\dagger}}&= t_{dots}\Green{d_{1},d_{1}^{\dagger}}+V_{2}^{*}\sum_{\mathbf{k}}\Green{c_{\mathbf{k}},d_{1}^{\dagger}} \label{eq:green3} 
+\end{align}
+    %  \left(\omega-\epsilon_{1}\right)\Green{d_{1},d_{1}^{\dagger}}	= & 1+t_{dots}\Green{d_{2},d_{1}^{\dagger}}+V_{1}^{*}\sum_{\mathbf{k}}\Green{c_{\mathbf{k}},d_{1}^{\dagger}} \\
+
+    % \left(\omega-\epsilon_{\mathbf{k}}\right)\Green{c_{\mathbf{k}},d_{1}^{\dagger}}= & V_{1}\Green{d_{1},d_{1}^{\dagger}}+V_{2}\Green{d_{2},d_{1}^{\dagger}} \\
+
+    % \left(\omega-\epsilon_{2}\right)\Green{d_{2},d_{1}^{\dagger}}= & t_{dots}\Green{d_{1},d_{1}^{\dagger}}+V_{2}^{*}\sum_{\mathbf{k}}\Green{c_{\mathbf{k}},d_{1}^{\dagger}}. \\
+ This system is already closed which means that we don't need any other equation to find the solution. The matrix form takes the form
+ \begin{equation}
+\left[\begin{array}{ccc}
+\omega-\epsilon_{2} & -V_{2} & -t_{dots}\\
+-V_{2}^{*} & \omega-\epsilon_{k} & -V_{1}\\
+-t_{dots}^{*} & -V_{1}^{*} & \omega-\epsilon_{1}
+\end{array}\right]\left[\begin{array}{c}
+\Green{c_{\mathbf{k}},d_{1}^{\dagger}}\\
+\Green{d_2,d_{1}^{\dagger}}\\
+\Green{d_{1},d_{1}^{\dagger}}
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]
+\label{eq:MatrixDQD}
+ \end{equation}
+ 
+\noindent By convenience we changed the order of the rows in the matrix. Although this matrix is not Laplacian, the procedure in \cite{spielman10} can still be applied with the downside of loosing some of the speed-up advantages of the algorithm. Still, some advantages of graphs are preserved. From these we point out  the possibility of taking taking minimal cuttings and the relation between these graphs and random walks in the graph. Both advantages simplify the complexity of the solution. 
+ 
+Now, our objective is to compute the green function  $\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}$.   For this we take the graph $\GDQD$ associated to the matrix in \eqref{eq:MatrixDQD}. The result is observed in \ref{fig:graphDQD}.a).  The vertexes of this graph will be the operators in the first site of the of the green functions  $(d_{1\downarrow},d_{2},c_{\boldsymbol{k}}$. $d_1^\dagger)$. $d^\dagger_1$ is not included since it only appears in the second sub-index of the green functions. The edges are given by the non-diagonal sites in the matrix. In addition, an energy parameter is assigned to each vertex, according to the corresponding term in the diagonal. These energies can also be taken as edges connecting each vertex with itself. 
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[scale=0.4]{IMAGES/Graphs/DQD-Pro.png}
+    \caption{ a) Graph $\GDQD$ b) After the elimination of vertex $c_k$, the energies of dots $d_1$ and $d_2$, and the coupling parameter are changed. c) After Gaussian elimination of dot $2$ the energy of dot $1$ is the inverse of $\Green{d_1,d^\dagger_1}$. \protect\Source{By the author.}}
+    \label{fig:graphDQD}
+\end{figure}
+
+
+The algorithm consists in the following. Each step of Gauss-Jordan elimination leads to a new graph with different energies and couplings. The elimination of a row and column is equivalent to pop-out the corresponding vertex in the graph. For instance, lets eliminate the first row and column of the matrix in \eqref{eq:MatrixDQD}. For it we just need to subtract the rank-$1$ matrix with the same first row and first column. 
+\begin{equation}
+        \left[\begin{array}{ccc}
+    \omega-\epsilon_{k} & -V_{2} & -V_{1}\\
+    -V_{2}^{*} & \omega-\epsilon_{2} & -t_{dots}\\
+    -V_{1}^{*} & -t_{dots}^{*} & \omega-\epsilon_{1}
+    \end{array}\right]-\left[\begin{array}{ccc}
+    \omega-\epsilon_{k} & -V_{2} & -V_{1}\\
+    -V_{2}^{*} & \frac{V_{2}^{*}V_{2}}{\omega-\epsilon_{k}} & \frac{V_{2}^{*}V_{1}}{\omega-\epsilon_{k}}\\
+    -V_{1}^{*} & \frac{V_{2}V_{1}^{*}}{\omega-\epsilon_{k}} & \frac{V_{1}^{*}V_{1}}{\omega-\epsilon_{k}}
+    \end{array}\right]=\left[\begin{array}{ccc}
+    0 & 0 & 0\\
+    0 & \omega-\epsilon_{2}-\frac{V_{2}^{*}V_{2}}{\omega-\epsilon_{k}} & -t_{dots}-\frac{V_{2}^{*}V_{1}}{\omega-\epsilon_{k}}\\
+    0 & -t_{dots}^{*}-\frac{V_{2}V_{1}^{*}}{\omega-\epsilon_{k}} & \omega-\epsilon_{1}-\frac{V_{1}^{*}V_{1}}{\omega-\epsilon_{k}}
+    \end{array}\right]
+    \label{eq:Gauss-Jordan} 
+\end{equation}
+
+The graph associated to this matrix can be observed in \ref{fig:graphDQD}.b). The first vertex corresponding to operator $c_k$ has been popped out. The energies and couplings are modified according to the possible walks passing through the vertex $c_k$.  For instance $d_1$'s energy $\epsilon_1$ receives an extra-term $\frac{V_{1}^{*}V_{1}}{\omega-\epsilon_{k}}$ representing an additional walk  from $d_1$ to $d_1$ passing through  $c_k$. The same logic can be applied to the other terms.  
+
+The next  stage will turn out into a single vertex as in \ref{fig:graphDQD}.c). As a result of Gauss-Jordan elimination it turns out that the energy of this vertex is the inverse of the green function $G_{d_1d^\dagger_1}$. The final result is then 
+
+\begin{equation}
+    \Green{d_{1},d_{1}^{\dagger}}=\left[\left(\omega-\epsilon_{1}-\frac{V_{1}V_{1}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)-\frac{\left(t_{dots}+\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)\left(t_{dots}+\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)^{*}}{\omega-\epsilon_{2}-\frac{\Gamma_{2}^{2}}{\omega-\epsilon_{\mathbf{k}}}}\right]^{-1}. \label{eq:solGreen}
+\end{equation}
+
+Just one additional correction. Remember that every term including $\epsilon_k$ is summing over all possible energies in the momentum space. We avoided this sum during the process to avoid carrying this term during the process. But it is important to include it know.  
+
+\begin{equation}
+     \Green{d_{1},d_{1}^{\dagger}}=\left[\left(\omega-\epsilon_{1}-\sum_{\mathbf{k}}\frac{V_{1}V_{1}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)-\frac{\left(t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)\left(t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)^{*}}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{\Gamma_{2}^{2}}{\omega-\epsilon_{\mathbf{k}}}}\right]^{-1}. \label{eq:SumSolGreen}
+\end{equation}
+
+\subsection{Graph Algorithm \label{sec:Algorithm}}
+
+This is the same procedure we will use in future processes. Just to summarize, the algorithm consists in 
+\begin{enumerate}
+    \item Compute the transport equations with the second term fixed in the creation operator of the dot  you are going to compute the green function. 
+     \item Set up the initial graph.
+    \item Pop out a vertex:
+    \begin{enumerate}
+        \item Compute the extra-terms in the energies and couplings based on the walks passing through the vertex that will be popped out.
+        \item Eliminate this vertex from the graph. 
+        \item Iterate till having just one vertex. 
+        \end{enumerate}
+    \item Invert the last energy to obtain the final green function of the dot.
+\end{enumerate}
+
+
+
 
 %---------------------------------------------------------------------------
 
@@ -445,6 +549,36 @@ The authors thank Edson Vernek for enlightening discussions.  L.G.G.V.D.S. ackno
  
  
 \begin{widetext}
+
+
+
+%-----------F I G U R E  Graph ------
+\begin{figure}[bt]
+\begin{center}
+\includegraphics[scale=0.4]{Graficos/Graph_DQD-Pro.png}
+\caption{ 
+}
+%
+\label{fig:GenModel}
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  1 ------
+
+
+
+%-----------F I G U R E  Graph ------
+\begin{figure}[bt]
+\begin{center}
+\includegraphics[scale=0.4]{Graficos/Graphs-DQD-M-Pro.png}
+\caption{ 
+}
+%
+\label{fig:GenModel}
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  1 ------
+
+
 \begin{equation}
     \GreenG{d_{1\downarrow},d_{1\downarrow}^{\dagger}}{\MDQD}=\left[\left(\GreenG{d_{1\downarrow},d_{1\downarrow}^{\dagger}}{\GDQD } \right)^{-1}+\frac{\omega}{\omega+\epsilon_{M}}\frac{E_{d_{1\dw}f_{\dw}}^{\MDQD}}{\left[\GreenG{f_{\downarrow},f_{\downarrow}^{\dagger}}{\MDQD-d_{1}}\right]^{-1}}\right]^{-1}.
 \end{equation}
@@ -453,6 +587,8 @@ where
     E_{d_{1\dw}f_{\dw}}^{\MDQD}=\left(t_{1}+t_{2}\frac{\left(t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}\right)\left(t_{1}^{*}+t_{2}^{*}\frac{\left(t_{dots}^{*}+\sum_{\mathbf{k}}\frac{V_{1}^{*}V_{2}}{\omega-\epsilon_{\mathbf{k}}}\right)}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}^{*}V_{2}}{\omega-\epsilon_{\mathbf{k}}}}\right).
 \end{equation}
 \Jesus{This fact is difficult to explain. I will need more plots and writing the appendix. For now I will leave here some results}
+
+
 
 We then need to compute $\GreenG{f_{\downarrow},f_{\downarrow}^{\dagger}}{\MDQD-d_{1}}$ . This graph is much simple. The neighborhood of  $f_{\downarrow}$ in graph ${\MDQD-d_{1}}$ are $d_2$ (above) and the inverted DQD(bellow). These neighbors are disconnected, hence we can include the in the green function independently. The term above is simply the dot $d_{2\downarrow}$ connected with the lead . 
 \begin{equation}
