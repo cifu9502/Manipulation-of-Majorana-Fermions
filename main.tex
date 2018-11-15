@@ -3,6 +3,7 @@
 \documentclass[showpacs,aps,prb,reprint,superscriptaddress]{revtex4-1}
 %\documentclass[showpacs,aps,prl,reprint,superscriptaddress,showkeys,floatfix,citeautoscript]{revtex4-1}
 \usepackage{bm}
+\usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{amsmath,amssymb,amstext}
@@ -174,7 +175,7 @@ H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQD}
 %-----------F I G U R E  1 ------
 \begin{figure}[bt]
 \begin{center}
-\includegraphics[scale=0.4]{Graficos/Model.png}
+\includegraphics[scale=0.4]{Graficos/GenModel.png}
 \caption{ DQD-Majorana set-up. Solid lines: standard coupling. Dashed lines: majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD}. The atomic energy levels appear inside each QD. Red dashed horizontal lines represent the Fermi level.  
 }
 %
@@ -182,6 +183,22 @@ H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQD}
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  1 ------
+
+
+%-----------F I G U R E  1 ------
+% \begin{figure}[bt]
+% \begin{center}
+%     \subfloat[\label{fig:GenModel}]{\includegraphics[scale=0.25]{Graficos/GenModel.png}} \hspace{2mm}
+%      \subfloat[\label{fig:transport}]{\includegraphics[scale=0.25]{Graficos/GraphM-DQD.png}} 
+% \caption{ 
+% }
+%
+
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  1 ------
+
+
 
 
 The interacting Anderson Model describes the DQD-lead system  
@@ -239,16 +256,45 @@ where $t_i$ is the coupling parameter between the majorana mode and QD $i$. $\ep
 
  
 % ---------------------------------------------------
+% \newpage
 \subsection{Methods}
-For the non-interacting case $(U=0)$, we use Zubarev's ballistic transport approach \cite{zubarev_double-time_1960} to compute the Green functions associated to both quantum dot operators $\Green{d_id^\dagger_i}$.
 
-Solving the transport equations involves dealing with a set of linear equations where all the possible variables including  $\omega$ , and the Hamiltonian parameters are assumed to be constant.  This can be done by  Gauss-Jordan elimination, noting that after each elimination process we need to carry on the account in terms of these variables. The solution  will be a polynomial fraction with the variable given by these parameters.  When the number of operators in the Hamiltonian increases the number of terms in the polynomial grows-up exponentially. This reveals the importance of exploring new methods that could simplify the solution.   \\
+
+
+To study the non-interacting case $(U=0)$, we use Zubarev's ballistic transport approach \cite{zubarev_double-time_1960} to compute the Green functions associated to both quantum dot operators $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$. The detailed procedure is included in \ref{sec:Algorithm}. The transport equations define a linear system where the Hamiltonian parameters $(t_1,t_2,\epsilon_1 \ldots)$ and the energy $\omega$ are taken as fix variables . The flow graph in FIG.\ref{fig:Transport} depicts the linear map associated to the transport in an hybrid Majorana-DQD system (see \eqref{eq:TransportMatrix} ). The Majorana mode divides the graph in  two parts, both of them representing a DQD. The upper DQD is conformed by annihilation operators while the lower one is formed by creation operators. The couplings in the lower part are the negative upper parameters. Meanwhile, the majorana fermion is the vertex acting as a  connector between both regions.
+
+Tho simplify the solution of this system we used graph linear algorithm \cite{spielman_algorithms_2010} to speed-up the process of Gauss-Jordan elimination. The idea consists in "popping-out" the vertexes of the graph one-by-one. Each pop-out process most be understood as the Gaussian elimination of the line and column in the matrix containing that vertex. Depending on the order of elimination of these vertexes different representations of the final polynomial fraction can be obtained. The insight of this method is that it allows us to select the order of vertex elimination to obtain the simplest representation of the final this function. All this process can be observed graphically in figure  
+
+
+
+The green functions $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$  obtained through Gauss-Jordan elimination constitute fractional polynomial with more than $300$ independent linear components. To provide a tractable decomposition of this polynomial we used a graph theory-inspired linear algorithm that emulates a Laplacian linear solver . Although this Hamiltonian is not Laplacian,  this method still provides a shortcut to Gauss-Jordan elimination by taking advantage of the minimal cuttings in the graph. As a matter of fact , this graph approach is especially good for Majorana systems  since the Majorana fermion is a natural cutting point that divides two sections of the graph.  
+
+
+
+
+
+% In addition the graph contraction facilitates a legible representation of the fractional polynomial. 
+
+
+% The solution of this problem can be achieved through 
+
+
+
+
+% In a system without majorana fermions these two regions are disconnected. The new physical   
+
+% The process of Gauss-Jordan elimination used to solved this cases can be strongly speede
+
+% The solution for the green function  will finally be a polynomial fraction over these variables. 
+
+% This can be done by  Gauss-Jordan elimination, noting that after each elimination process we need to carry on the account in terms of these variables.   When the number of operators in the Hamiltonian increases the number of terms in the polynomial grows-up exponentially. This reveals the importance of exploring new methods that could simplify the solution.   \\
+
 
 
 This process in 
 The density of states is 
 \begin{equation}
-    \rho_{A,A^\dagger}=-\frac{1}{\pi}Im\left[\Green{A,A^\dagger}\right].
+    \rho_{1}(\omega)=-\frac{1}{\pi}$Im$\left[G_{d_1,d_1^\dagger}(\omega))\right].
     \label{eq:Density of States}
 \end{equation}
 
@@ -266,6 +312,18 @@ To implement the NRG code it is necessary to define a cut-off energy $D$ \cite{b
 
 The local density of states (LDOS) on each dot is obtained by computing the spectral function 
 
+%-----------F I G U R E  2 ------
+\begin{figure}[t]
+\begin{center}
+% \includegraphics[scale=0.55]{Graficos/GraphM-DQD.png}
+ \includegraphics[scale=0.55]{Graficos/gra}
+\caption{ Transport flow in a DQD majorana system.   
+}
+%
+\label{fig:Transport}
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  2 ------
 
 %
 where $\mathcal{G}^R(\omega)$ is the Fourier transform of the Green function $\mathcal{G}^R(t,T)=-i\theta(t) \langle \{d_{i,\sigma}(t) , d_{i,\sigma}^\dagger(0)\} \rangle$. The spectral functions were calculated with the DM-NRG method.\cite{hofstetter_generalized_2000} 
@@ -422,7 +480,39 @@ In \ref{fig:2D/Shift_ed2} we observe that both, the Kondo and the MZM peaks are 
 
 
 
-\subsection{Abstract}
+
+
+%---------------------------------------------------------------------------
+
+
+
+
+
+    
+\section{Concluding remarks}
+\label{sec:Conclusions}
+
+Conclusion goes here.
+
+\begin{acknowledgments}
+The authors thank Edson Vernek for enlightening discussions.  L.G.G.V.D.S. acknowledges financial support by CNPq (grants No. 307107/2013-2 and 449148/2014-9), and FAPESP (grant No. 2016/18495-4).
+\end{acknowledgments}
+
+\LUIS{Only ONE bib file}
+
+%---------------------- Apendix A------------------------
+
+
+%-----------------------------------------------------------
+
+%\bibliographystyle{unsrtnat}
+%\addcontentsline{toc}{section}{\textbf{References}}
+\bibliography{Majorana_DQD}
+
+ \appendix
+ 
+ 
+ \subsection{Abstract \label{abstract_alg}}
 \begin{equation}
   \Green{A,B}= \mathcal{F}\left\{ \mathcal{T}\left[\left\{ A(t),B(t')\right\} \right]\right\} \left(\omega\right),
   \label{eq:greenFunction}
@@ -526,40 +616,37 @@ This is the same procedure we will use in future processes. Just to summarize, t
 
 
 %---------------------------------------------------------------------------
-
-%---------------------------------------------------------------------------
-
-
-
-
-
-    
-\section{Concluding remarks}
-\label{sec:Conclusions}
-
-Conclusion goes here.
-
-\begin{acknowledgments}
-The authors thank Edson Vernek for enlightening discussions.  L.G.G.V.D.S. acknowledges financial support by CNPq (grants No. 307107/2013-2 and 449148/2014-9), and FAPESP (grant No. 2016/18495-4).
-\end{acknowledgments}
-
-\LUIS{Only ONE bib file}
-
-%---------------------- Apendix A------------------------
-
-
-%-----------------------------------------------------------
-
-%\bibliographystyle{unsrtnat}
-%\addcontentsline{toc}{section}{\textbf{References}}
-\bibliography{Majorana_DQD}
-
- \appendix
- 
  
 \begin{widetext}
 
-
+\begin{equation}
+    \left[\begin{array}{ccccccc}
+\omega-\epsilon_{2} & -V_{2} & -t_{dots} & \frac{t_{2}}{\sqrt{2}} & 0 & 0 & 0\\
+-V_{2}^{*} & \omega-\epsilon_{k} & -V_{1} & 0 & 0 & 0 & 0\\
+-t_{dots}^{*} & -V_{1}^{*} & \omega-\epsilon_{1} & \frac{t_{1}}{\sqrt{2}} & 0 & 0 & 0\\
+\frac{\sqrt{2}t_{2}^{*}}{\omega+\epsilon_{M}} & 0 & \frac{\sqrt{2}t_{1}^{*}}{\omega+\epsilon_{M}} & \omega-\epsilon_{M} & \frac{\sqrt{2}t_{2}^{*}}{\omega+\epsilon_{M}} & 0 & \frac{\sqrt{2}t_{1}^{*}}{\omega+\epsilon_{M}}\\
+0 & 0 & 0 & \frac{-t_{2}}{\sqrt{2}} & \omega+\epsilon_{2} & V_{2}^{*} & +t_{dots}^{*}\\
+0 & 0 & 0 & 0 & V_{2} & \omega+\epsilon_{k} & V_{1}^{*}\\
+0 & 0 & 0 & \frac{-t_{1}}{\sqrt{2}} & t_{dots} & V_{1} & \omega+\epsilon_{1}
+\end{array}\right]\left[\begin{array}{c}
+\Green{d_{\mathbf{2\downarrow}},d_{1\downarrow}^{\dagger}}\\
+\Green{c_{k\downarrow},d_{1\downarrow}^{\dagger}}\\
+\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}\\
+\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}\\
+\Green{d_{2\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}\\
+\Green{c_{k\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}\\
+\Green{d_{1\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+1
+\end{array}\right]
+\label{eq:TransportMatrix}
+\end{equation}
 
 %-----------F I G U R E  Graph ------
 \begin{figure}[bt]
