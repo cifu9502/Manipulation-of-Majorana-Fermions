@@ -340,43 +340,43 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
   
 %   To unify the units of the interacting and non-interacting case we pick $U=8.69\Gamma_1$ and we let $D = 2U_1=17.3 \Gamma_1$.
  \section{Results}
- 
-     \subsection{Non-interacting dots}
-     In non-interacting dots $(U=0)$, the density of states at each dot can be obtained from equation \eqref{eq:Density of States} by replacing the green function at \eqref{eq:Green_NonInteracting}. The manipulation of the Majorana mode is achieved by  tuning the model parameters $(t_1,t_2, \epsilon_1 , \epsilon_2 , t_dots)$. Two types of majorana signatures are observed, both of them robust under a close range of parameters. 
-     
-     \begin{itemize}
-         \item \textbf{Type I: }  The spin-$\dw$ DOS is the half of the spin-$\up$ DOS  at the Fermi energy $(\rho_\dw(0)=\rho_\up(0))$. 
-         \item \textbf{Type II: } The spin-$\dw$ Fermi energy is equal about $5.2$. This is the value such that  $\pi  \Gamma_1 \rho_\dw(0) = 0.5$, characteristic of a decay of half a quanta in the conductivity. 
-     \end{itemize}
-     
-    
-     
-     
-     
-     
-     
-     
-     
+  %-----------F I G U R E  MODELS ------
+\begin{figure}[bt]
+\begin{center}
+\includegraphics[scale=0.27]{Graficos/MajoranaModels.png}
+\caption{\label{fig:MajoranaModels}  Manipulation of majorana signatures according to the different connections
+}
+%
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  3 ------
 
- 
- 
+     \subsection{Manipulation in non-interacting quantum dots}
+     In non-interacting dots $(U=0)$, the density of states at each dot can be obtained from equation \eqref{eq:Density of States} by replacing the green function at \eqref{eq:Green_NonInteracting}. The manipulation of the Majorana mode is achieved by  tuning the model parameters $(t_1,t_2, \epsilon_1 , \epsilon_2 , t_dots)$. Fig.\ref{fig:MajoranaModels} shows 9 possible processes. The first column shows a symmetric coupling of both QDs with the lead and the Majorana mode. In columns two and three the second dot is attached inderectly to the lead through the first dot. The majorana mode can be either attached to the first dot (column 2) or to the second dot (column 3). In the first row we assume that the gate voltage through both dots is $0$ $(\epsilon_1 = \epsilon_2 = 0)$, hence the density of states is particle hole symmetric $(\rho(\omega) = \rho(-\omega))$. The majorana signature can be manipulated by increasing the gate voltage at QD1 (second row) or QD2(third row). 
+     
  %-----------F I G U R E  3 ------
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.48]{Graficos/t1=t2.png}
-\caption{ DQD-Majorana set-up. Solid lines: standard coupling. Dashed lines: Majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD}. The atomic energy levels appear inside each QD. Red dashed horizontal lines represent the Fermi level.  
+\caption{ \label{fig:SymCoupling}  Density of states in the symmetric coupling arrangement (Fig.\ref{fig:MajoranaModels} first column). Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.  
 }
 %
 \label{fig:GenModel}
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  3 ------
+     
+     
+     The density of states for the set-ups in column $1$ (FIG.\ref{fig:MajoranaModels}) is shown in Figure \ref{fig:SymCoupling}. Since the model is non-interacting, spin-$\up$ and spin-$\dw$ models are independent. The spin-$\dw$ DOS (dashed line) shows the effects caused by the majorana mode in comparison with the spin-$\up$  results (solid line). In the particle hole symmetric case the DOS is equal in both dots. Note that that the spin-$\dw$ DOS is the half of the spin-$DOS$ at the fermi energy $\rho_\dw(0) = \rho_\up(0)$. This is a Majorana signature similar to the one observed in the single dot case \cite{liu_detecting_2011}. Hence, the majorana tunnels inside both dots. When a possitive or negative gate voltage is induced in one of the dots,  the Majorana mode is induced to leave that dot. As consequence the majorana signature will only appear in the other dot. 
+     
+    If the second dot is not directly connected to the lead some interesting results appear. In this set-up the induced tunneling between both dots generated a path difference that destroys the central peak (See FIG\ref{fig:Interference} spin-$\up$ line). If the Majorana mode is connected to the first dot, this interference will destroy the majorana signature in the first dot. Interestingly, it is possible to observe a clear majorana signature in the second dot caracterized by a half central peak in the spin-$dw$ DOS. While turning on the first dot gate volge seems to destroy this majorana signature, tuning the second dots gate voltage returns the majorana signature to the first dot. 
+    
 
  %-----------F I G U R E  4 ------
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.48]{Graficos/t2=0.png}
-\caption{ DQD-Majorana set-up. Solid lines: standard coupling. Dashed lines: Majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD}. The atomic energy levels appear inside each QD. Red dashed horizontal lines represent the Fermi level.  
+\caption{  \label{fig:Interference} Density of states in both dots of the case where the only the first QD is attached to both Majorana and Lead (Fig.\ref{fig:MajoranaModels} second column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.
 }
 %
 \label{fig:GenModel}
@@ -385,11 +385,20 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 %-----------E N D  F I G U R E  4 ------
 
 
+    On the other hand, if the Majorana mode is attached to the second dot in the previous arrangement, then both dots will exhibit a majorana signature. However, the signature in dot 1 is different from the others. The spin-$\dw$ DOS reveals the emergence of a zero mode with height close to $5.2$ (such that $\pi  \Gamma_1 \rho_\dw(0) = 0.5$). However the spin-$\up$ DOS remains equal to $0$. This new type of majorana signature is the result of an indirect connection between QD1 and the majorana mode attached t the second dot. As in the previous case, turning on the gate voltage in dot $1$ destroys the majorana signature in both dots. However, if the gate voltage in dot $2$ is turned on, the Majorana mode will leave QD2 but the indirect majorana signature will prevail in QD1. 
+    
+    To sum up we were able to distinguish two types of majorana signatures:
+     \begin{itemize}
+         \item \textbf{Type I: }  The spin-$\dw$ DOS is the half of the spin-$\up$ DOS  at the Fermi energy $(\rho_\dw(0)=\rho_\up(0))$. 
+         \item \textbf{Type II: } The spin-$\dw$ Fermi energy is equal about $5.2$. This is the value such that  $\pi  \Gamma_1 \rho_\dw(0) = 0.5$, characteristic of a decay of half a quanta in the conductivity. 
+     \end{itemize}
+     The state of these signatures for each of these stated is depicted in FIG.\ref{fig:MajoranaModels}. A solid filled red circle inside the dot represents the appearance of a Type I Majorana signature, on the othere hand a dashed filled red circle represents the presence a  Type II Majorana signature. The obscure dashed circle represents a vanishing majorana signature due to an applied gate voltage or by quantum interference.
+    
  %-----------F I G U R E  5 ------
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.48]{Graficos/t1=0.png}
-\caption{ DQD-Majorana set-up. Solid lines: standard coupling. Dashed lines: Majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD}. The atomic energy levels appear inside each QD. Red dashed horizontal lines represent the Fermi level.  
+\caption{  \label{fig:IndirectMajorana} Density of states of both dots in the case where only de first QD is attached to the lead and the Majorana mode is attached to the second QD.  (Fig.\ref{fig:MajoranaModels} third column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS. 
 }
 %
 \label{fig:GenModel}
@@ -397,9 +406,12 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 \end{figure}
 %-----------E N D  F I G U R E  5 ------
  
- 
- \subsection{Manipulation in non-interacting QDs}
- \subsection{Manipulation in interacting QDs}
+    \subsection{Manipulation in interacting dots}
+    
+    We consider a Coulomb repulsion energy of $U = 17\Gamma_1$ in both dots. The factor $ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2}$ in \eqref{eq:H_DQD} favors states with an odd number of electrons. In addition, particle-hole equilibrium is now achieved when $\left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}$. Any induced gate voltage must be considered as a shifting from this equilibrium point. 
+     
+    
+    
  
  
  
@@ -552,14 +564,14 @@ The previous procedure can be generalized into the following algorithm:
     \begin{enumerate}
         \item Computing the extra-terms in the energies and couplings based on the walks passing through the popped vertex.
         \item Eliminating this vertex from the graph. 
-        \item Iterating till there is just one  vertex.
+        \item Iterating till there is only one  vertex.
         \end{enumerate}
     \item The energy in the remaining vertex $d$ is $\epsilon_d = \frac{1}{\omega -\Green{d,d\dagger}}$ .
 \end{enumerate}
   
 
 
-To solve  the general case we start with the graph in FIG.\ref{fig:Transport} and we pop out the vertexes $c_k,c^\dagger_k, d_{2,\dw}$ and $ d^\dagger_{2,\dw}$ in that order. The energies associated to $d_{1,\dw}$ and $d^\dagger_{1,\dw}$ will be similar to \eqref{eq:EnDQD} giving 
+Following these steps it is possible to solve the general case.  We start with the graph in FIG.\ref{fig:Transport} and we pop out the vertexes $c_k,c^\dagger_k, d_{2,\dw}$ and $ d^\dagger_{2,\dw}$ in that order. The energies associated to $d_{1,\dw}$ and $d^\dagger_{1,\dw}$ will be similar to \eqref{eq:EnDQD} giving 
 \begin{equation}
     \epsilon_{DQD}^{\pm}=\pm\epsilon_{1}+\sum_{\mathbf{k}}\frac{V_{1}V_{1}^{*}}{\omega-\epsilon_{\mathbf{k}}}+\frac{\left\Vert \pm t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right\Vert ^{2}}{\omega\pm\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}. \label{eq:epDQD}
 \end{equation}
