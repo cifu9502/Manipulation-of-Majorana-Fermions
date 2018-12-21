@@ -74,7 +74,9 @@ C.P.\ 66318, 05315--970 S\~{a}o Paulo, SP, Brazil}
 
 \begin{abstract}
 
-(To be written)
+Majorana fermions appearing at the edges of topological superconducting wires are a promising platform for fault-tolerant quantum computation. Novel proposals use Majorana modes tunneling inside quantum dots (QDs) to implement quantum architectures, because today’s precise experimental control over the QD parameters offers the unique possibility of manipulating the Majorana modes inside multi-dot systems. The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). So far, no complete analysis of this basic structure has been done. This  project fills this gap by realizing an exact quantum transport study of the effects of coupling a Majorana mode with a DQD. By tuning the model parameters we show that it is possible to control the localization of the Majorana signature in the DQD. 
+
+
 
 
 \end{abstract} 
@@ -96,7 +98,7 @@ Despite the positive experimental results, their is still certain skepticism abo
 
 % Experimental proposals for braiding measurements have been  proposed  in one dimensional majorana chains.  The system inspired in the famous Kitaev toy model is a promising example of these topological superconductors.  The chain emulates a spinless p-wave superconducting wire. With the adequate combination of magnetic field,  superconducting gap and Rashba spin-orbit coupling  the wire enters into a topological phase in which zero-mode majorana bound states emerge. 
 
-A promising method to detect Majorana modes consists in attaching a quantum dot (QD) to the edges of a Majorana chain in the topological phase and executing transport measurements through the QD. \cite{liu_detecting_2011}  The Majorana mode at the end of the chain then leaks inside the QD \cite{vernek_subtle_2014} which produces a zero-bias conductance peak of half a quanta $\frac{e^{2}}{2h}$ through the dot. This is a Majorana signature which produces half of the expected peak by a regular fermion.  Recently, experiments including hybrid Majorana-QD systems have been performed. \cite{deng_majorana_2016}  In addition, the similarity of this phenomenon with the Kondo effect, where the zero-bias conductance peak takes  $\frac{e^{2}}{h}$, motivated the study of combined Kondo-Majorana physics in this system. \cite{lee_kondo_2013,ruiz-tijerina_interaction_2015} This project revealed the existance of a region of parameters where both, Kondo and Majorana physics, coexist. 
+A promising method to detect Majorana modes consists in attaching a quantum dot (QD) to the edges of a Majorana chain in the topological phase and executing transport measurements through the QD. \cite{liu_detecting_2011}  The Majorana mode at the end of the chain then leaks inside the QD \cite{vernek_subtle_2014} which produces a zero-bias conductance peak of half a quanta $\frac{e^{2}}{2h}$ through the dot. This is a Majorana signature which produces half of the expected peak by a regular fermion.  Recently, experiments including hybrid Majorana-QD systems have been performed. \cite{deng_majorana_2016}  In addition, the similarity of this phenomenon with the Kondo effect,\cite{hewson_kondo_1997,wilson_renormalization_1975} where the zero-bias conductance peak takes  $\frac{e^{2}}{h}$, motivated the study of combined Kondo-Majorana physics in this system. \cite{lee_kondo_2013,ruiz-tijerina_interaction_2015} This project revealed the existance of a region of parameters where both, Kondo and Majorana physics, coexist. 
 
 This idea has turned on new lights into the design of quantum architectures, \cite{barkeshli_physical_2015,karzig_scalable_2017}  because today’s precise experimental control over the parameters of QDs - energy levels, tunneling couplings, etc. - offers the unique possibility of manipulating the Majorana modes inside multi-dot systems. The simplest case where Majorana manipulation is possible is in a double quantum dot. So far, no complete analysis of this simple case has been done. The goal of this  project is to fill this gap by realizing a full quantum transport study of the effects of coupling a Majorana mode with a double quantum dot.  By tuning the QD gate voltages and the Majorana couplings we will be able to probe the mobility of the Majoranamodes through the dots. 
  
@@ -351,7 +353,7 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 \end{figure}
 %-----------E N D  F I G U R E  3 ------
 
-     \subsection{Manipulation in non-interacting quantum dots}
+     \subsection{Majorana manipulation in non-interacting quantum dots}
      In non-interacting dots $(U=0)$, the density of states at each dot can be obtained from equation \eqref{eq:Density of States} by replacing the green function at \eqref{eq:Green_NonInteracting}. The manipulation of the Majorana mode is achieved by  tuning the model parameters $(t_1,t_2, \epsilon_1 , \epsilon_2 , t_dots)$. Fig.\ref{fig:MajoranaModels} shows 9 possible processes. The first column shows a symmetric coupling of both QDs with the lead and the Majorana mode. In columns two and three the second dot is attached inderectly to the lead through the first dot. The majorana mode can be either attached to the first dot (column 2) or to the second dot (column 3). In the first row we assume that the gate voltage through both dots is $0$ $(\epsilon_1 = \epsilon_2 = 0)$, hence the density of states is particle hole symmetric $(\rho(\omega) = \rho(-\omega))$. The majorana signature can be manipulated by increasing the gate voltage at QD1 (second row) or QD2(third row). 
      
  %-----------F I G U R E  3 ------
@@ -406,13 +408,23 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 \end{figure}
 %-----------E N D  F I G U R E  5 ------
  
-    \subsection{Manipulation in interacting dots}
+    \subsection{Majorana manipulation in interacting dots}
     
-    We consider a Coulomb repulsion energy of $U = 17\Gamma_1$ in both dots. The factor $ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2}$ in \eqref{eq:H_DQD} favors states with an odd number of electrons. In addition, particle-hole equilibrium is now achieved when $\left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}$. Any induced gate voltage must be considered as a shifting from this equilibrium point. 
-     
+     %-----------E N D  F I G U R E  6 ------    
+    \begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.48]{Graficos/NRG-t1=t2.png}
+\caption{  \label{fig:NRG_Majorana} Density of states of both dots in the symmetric coupling case between the Majorana and the interacting DQD. Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS. 
+}
+\label{fig:GenModel}
+\end{center}
+\end{figure}
+    %-----------E N D  F I G U R E  6 ------
+    
+    We consider a Coulomb repulsion energy of $U = 17\Gamma_1$ in both dots. The factor $ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2}$ in \eqref{eq:H_DQD} favors states with an odd number of electrons. In addition, particle-hole equilibrium is now achieved when $\left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}$. Any induced gate voltage must be considered as a shifting from this equilibrium point. In the case of symmetric coupling FIG\ref{fig:NRG_Majorana} shows the DOS in both QDs. The two peaks appearing at $8.6\Gamma_1 = \frac{U_i}{2}$ represent the two energy levels. The central spin-$\up$ peak is produced by the Kondo effect, \cite{hewson_kondo_1997,wilson_renormalization_1975}  while the two satellite peaks observed in the inset observed are the result of the  RKKY anti-ferromagnetic interaction between bott dots.  \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} The spin-$\dw$ DOS at the fermi energy  is exactly the half of the spin-$\up$ DOS as expected from a Type I majorana signature. Note, that in this case the majorana signature coexists with the Kondo effect in the DQD as already predicted by Ruiz-Tijerina \textit{et al.} for a single dot. \cite{ruiz-tijerina_interaction_2015}
     
     
- 
+
  
  
 %  spin-$\dw$ particle number $\hat{N_\dw}$ is not preserved due to the term $(d_{i\downarrow}^{\dagger}f^\dagger_{\dw} + 
@@ -476,10 +488,10 @@ The Fourier transform of Schrodinger evolution determines the transport equation
 
 Writing the other equations  we obtain the  linear system
 \begin{equation}
-    T \vec{G}_{d^\dagger_1} = \hat{e_1}
+    \mathcal{T} \vec{G}_{d^\dagger_1} = \hat{e_1}
 \end{equation}
 
-\noindent where $T$ is the transport matrix 
+\noindent where $\mathcal{T}$ is the transport matrix 
 \begin{equation}
 \left[\begin{array}{ccccccc}
 \omega-\epsilon_{1} & -V_{1}^{*} & -t_{dots} & \frac{-t_{1}}{\sqrt{2}} & 0 & 0 & 0\\
