@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{24}%
+\begin{thebibliography}{25}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -186,6 +186,20 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo
   {volume} {354}},\ \bibinfo {pages} {1557} (\bibinfo {year}
   {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hewson}(1997)}]{hewson_kondo_1997}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~C.}\ \bibnamefont
+  {Hewson}},\ }\href@noop {} {{\selectlanguage {en}\emph {\bibinfo {title} {The
+  Kondo Problem to Heavy Fermions}}}}\ (\bibinfo  {publisher} {Cambridge
+  University Press},\ \bibinfo {year} {1997})\ \bibinfo {note}
+  {google-Books-ID: fPzgHneNFDAC}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wilson}(1975)}]{wilson_renormalization_1975}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~G.}\ \bibnamefont
+  {Wilson}},\ }\href {\doibase 10.1103/RevModPhys.47.773} {\bibfield  {journal}
+  {\bibinfo  {journal} {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume}
+  {47}},\ \bibinfo {pages} {773} (\bibinfo {year} {1975})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Lee}\ \emph {et~al.}(2013)\citenamefont {Lee},
   \citenamefont {Lim},\ and\ \citenamefont {Lopez}}]{lee_kondo_2013}%
   \BibitemOpen
@@ -287,13 +301,6 @@
   {\bibinfo {title} {Algorithms, {Graph} {Theory}, and {Linear} {Equations} in
   {Laplacian} {Matrices}}}},\ Proceedings of the {International} {Congress} of
   {Mathematicians}\ (\bibinfo {year} {2010})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Wilson}(1975)}]{wilson_renormalization_1975}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~G.}\ \bibnamefont
-  {Wilson}},\ }\href {\doibase 10.1103/RevModPhys.47.773} {\bibfield  {journal}
-  {\bibinfo  {journal} {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume}
-  {47}},\ \bibinfo {pages} {773} (\bibinfo {year} {1975})}\BibitemShut
-  {NoStop}%
 \bibitem [{\citenamefont {Sindel}(2005)}]{sindel_numerical_2005}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
