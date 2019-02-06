@@ -22,7 +22,7 @@
 \usepackage{tikz}\usetikzlibrary{petri}
 %\usepackage{bbold}
 %\usepackage{makeidx}
-\newcommand{\TS}[1]{{$\rightarrow${\sl#1}}}
+\newcommand{\TS}[1]{{$\rightarrow$ {\sl#1}}}
 \newcommand{\LUIS}[1]{\textcolor{blue}{\fbox{Luis} {\sl#1}}}
 \newcommand{\Jesus}[1]{\textcolor{red}{\fbox{Jesus} {\sl#1}}}
 \begin{document}
@@ -57,13 +57,11 @@
 \newcommand{\super}{\vert \Delta \vert}
 
 
-\newcommand{\TS}[1]{{$\rightarrow$ {\sl#1}}}
-\newcommand{\LUIS}[1]{\textcolor{blue}{\fbox{Luis} {\sl#1}}}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{ Manipulating Majorana Zero Modes using Double Quantum Dots }
+\title{ Manipulation of Majorana Modes in a Double Quantum Dot }
 
 \author{Jesus D. Cifuentes}
 \affiliation{Instituto de F\'{\i}sica, Universidade de S\~{a}o Paulo,
@@ -76,9 +74,7 @@ C.P.\ 66318, 05315--970 S\~{a}o Paulo, SP, Brazil}
 
 \begin{abstract}
 
-\LUIS{We'll call them Majorana ``zero modes" instead of ``Majorana fermions", which relates more to elementary particles.}
-
-Majorana zero modes (MZMs) appearing at the edges of topological superconducting wires are a promising platform for fault-tolerant quantum computation. Novel proposals use MZMs  tunneling inside quantum dots (QDs) to implement quantum architectures, because today’s precise experimental control over the QD parameters offers the unique possibility of manipulating the Majorana modes inside multi-dot systems. The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). So far, no complete analysis of this basic structure has been done. This  project fills this gap by realizing an exact quantum transport study of the effects of coupling a Majorana mode with a DQD. By tuning the model parameters we show that it is possible to control the localization of the Majorana signature in the DQD. 
+Majorana fermions appearing at the edges of topological superconducting wires are a promising platform for fault-tolerant quantum computation. Novel proposals use Majorana modes tunneling inside quantum dots (QDs) to implement quantum architectures, because today’s precise experimental control over the QD parameters offers the unique possibility of manipulating the Majorana modes inside multi-dot systems. The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). So far, no complete analysis of this basic structure has been done. This  project fills this gap by realizing an exact quantum transport study of the effects of coupling a Majorana mode with a DQD. By tuning the model parameters we show that it is possible to control the localization of the Majorana signature in the DQD. 
 
 
 
@@ -94,36 +90,21 @@ Majorana zero modes (MZMs) appearing at the edges of topological superconducting
 \section{Introduction}
 \label{sec:Intro}
 
-\TS{Majorana zero modes in condensed matter systems: they have been found, several papers have been written about it and there has been much progress in distinguishing them from other sources of zero-bias peaks.}
-
 
 
 In the last few decades the interest in the so called Majorana fermions has been increasing. The particle proposed by the physicist Ettore Majorana  as the real field solution of the Dirac equation describes a fermion which is its own antiparticle, hence it has no charge nor mass. To the date no fundamental particle with these characteristics has been found. However,  theoretical research predicts that Majorana Fermions emerge as quasi-particles at the boundary of certain topological superconductors. \citet{kitaev_unpaired_2001} Recently, the new technological innovations  allowed the observation of Majorana signatures in different topological materials. \citep{mourik_signatures_2012,das_zero-bias_2012,deng_anomalous_2012,zhang_quantized_2018}
-
-\TS{What's next? Manipulation and braiding !}
-
 
 Despite the positive experimental results, their is still certain skepticism about the existence of  Majorana Fermions. One of the reasons  is that some properties of Majorana quasiparticles like the expected non-abelian statistics have not been measure. This property is of especial interest due to its promising applications in topological quantum computing. The braiding protocol based on  Majorana's non-abelian statistics is the key to  fault-tolerant quantum computation. \cite{kitaev_fault-tolerant_2003,sarma_majorana_2015} 
 
 % Experimental proposals for braiding measurements have been  proposed  in one dimensional majorana chains.  The system inspired in the famous Kitaev toy model is a promising example of these topological superconductors.  The chain emulates a spinless p-wave superconducting wire. With the adequate combination of magnetic field,  superconducting gap and Rashba spin-orbit coupling  the wire enters into a topological phase in which zero-mode majorana bound states emerge. 
 
-\TS{MZMs in quantum dots can co-exist with Kondo peaks.}
-
-
-A promising method to detect Majorana modes consists in attaching a quantum dot (QD) to the edges of a Majorana chain in the topological phase and executing transport measurements through the QD. \cite{liu_detecting_2011}  The Majorana mode at the end of the chain then leaks inside the QD \cite{vernek_subtle_2014} which produces a zero-bias conductance peak of half a quanta $\frac{e^{2}}{2h}$ through the dot. This is a Majorana signature which produces half of the expected peak by a regular fermion.  Recently, experiments including hybrid Majorana-QD systems have been performed. \cite{deng_majorana_2016}  In addition, the similarity of this phenomenon with the Kondo effect,\cite{hewson_kondo_1997,wilson_renormalization_1975} where the zero-bias conductance peak takes  $\frac{e^{2}}{h}$, motivated the study of combined Kondo-Majorana physics in this system. \cite{lee_kondo_2013,ruiz-tijerina_interaction_2015} This project revealed the existence of a region of parameters where both, Kondo and Majorana physics, coexist. 
-
-
+A promising method to detect Majorana modes consists in attaching a quantum dot (QD) to the edges of a Majorana chain in the topological phase and executing transport measurements through the QD. \cite{liu_detecting_2011}  The Majorana mode at the end of the chain then leaks inside the QD \cite{vernek_subtle_2014} which produces a zero-bias conductance peak of half a quanta $\frac{e^{2}}{2h}$ through the dot. This is a Majorana signature which produces half of the expected peak by a regular fermion.  Recently, experiments including hybrid Majorana-QD systems have been performed. \cite{deng_majorana_2016}  In addition, the similarity of this phenomenon with the Kondo effect,\cite{hewson_kondo_1997,wilson_renormalization_1975} where the zero-bias conductance peak takes  $\frac{e^{2}}{h}$, motivated the study of combined Kondo-Majorana physics in this system. \cite{lee_kondo_2013,ruiz-tijerina_interaction_2015} This project revealed the existance of a region of parameters where both, Kondo and Majorana physics, coexist. 
 
 This idea has turned on new lights into the design of quantum architectures, \cite{barkeshli_physical_2015,karzig_scalable_2017}  because today’s precise experimental control over the parameters of QDs - energy levels, tunneling couplings, etc. - offers the unique possibility of manipulating the Majorana modes inside multi-dot systems. The simplest case where Majorana manipulation is possible is in a double quantum dot. So far, no complete analysis of this simple case has been done. The goal of this  project is to fill this gap by realizing a full quantum transport study of the effects of coupling a Majorana mode with a double quantum dot.  By tuning the QD gate voltages and the Majorana couplings we will be able to probe the mobility of the Majoranamodes through the dots. 
-
-\LUIS{Ok. Ref. \onlinecite{karzig_scalable_2017} is PRB of scalable designs: PRB \textbf{95} 235305 (2017). }
-
  
 %  The idea of using hybrid quantum dot-Majoranaheteroestructures to implemtent quantum gates has aquired wide interest in the last years.  One of the insights of these structures is the posibility of manipunaling  Majoranas  in multidot systems by shifting the QD gate voltages and Hence the approach is suitable for the implementation of braiding procedures . The simplest system where Majorana manipulation is possible is  a  double quantum dot (DQD) coupled to a Majoranachain. So far, no complete analysis of this simple case has been done. The goal of this  project is to fill this gap by realizing a full quantum transport study of the effects of coupling a Majorana mode with a double quantum dot.
  
-\TS{Here's what we did: quantum tunneling of a MZM into a double dot shows several possibilities for manipulation of MZM}
-
-\LUIS{In this paper, we ...} 
+ 
   We  considered both interacting and non-interacting cases. For interacting systems we used a obtained the exact transport description . On non-interacting models we used a NRG approach.   We found that in symmetric couplings  In the non-interacting case, we confirmed that shifting the QD’s gate voltage induces the Majorana to tunnel only to the other dot. In addition, an indirect coupling of the second dot could cause destructive interference with the Majorana signature. In the interacting case,  the NRG simulations confirmed these results and showed that other interacting effects -  Kondo effect and RKKY interactions \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} - could coexist with the Majorana signatures. On the other hand, when only one QD is coupled to the leads and the other Dot is attached to the QD,  the Kondo effect is annihilated due to the destructive interference  generated by extra dot. \cite{dias_da_silva_transmission_2008} Our study includes how the Majorana mode interacts with these two effects.  
  
  
@@ -390,9 +371,9 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 %-----------E N D  F I G U R E  3 ------
      
      
-     The density of states for the setups in column $1$ (FIG.\ref{fig:MajoranaModels}) is shown in Figure \ref{fig:SymCoupling}. Since the model is non-interacting, spin-$\up$ and spin-$\dw$ models are independent. The spin-$\dw$ DOS (dashed line) shows the effects caused by the majorana mode in comparison with the spin-$\up$  results (solid line). In the particle hole symmetric case the DOS is equal in both dots. Note that that the spin-$\dw$ DOS is the half of the spin-$DOS$ at the fermi energy $\rho_\dw(0) = \rho_\up(0)$. This is a Majorana signature similar to the one observed in the single dot case \cite{liu_detecting_2011}. Hence, the majorana tunnels inside both dots. When a possitive or negative gate voltage is induced in one of the dots,  the Majorana mode is induced to leave that dot. As consequence the majorana signature will only appear in the other dot. 
+     The density of states for the set-ups in column $1$ (FIG.\ref{fig:MajoranaModels}) is shown in Figure \ref{fig:SymCoupling}. Since the model is non-interacting, spin-$\up$ and spin-$\dw$ models are independent. The spin-$\dw$ DOS (dashed line) shows the effects caused by the majorana mode in comparison with the spin-$\up$  results (solid line). In the particle hole symmetric case the DOS is equal in both dots. Note that that the spin-$\dw$ DOS is the half of the spin-$DOS$ at the fermi energy $\rho_\dw(0) = \rho_\up(0)$. This is a Majorana signature similar to the one observed in the single dot case \cite{liu_detecting_2011}. Hence, the majorana tunnels inside both dots. When a possitive or negative gate voltage is induced in one of the dots,  the Majorana mode is induced to leave that dot. As consequence the majorana signature will only appear in the other dot. 
      
-    If the second dot is not directly connected to the lead the induced tunneling between both dots generates a path difference that destroys the central peak (See FIG\ref{fig:Interference} spin-$\up$ line). If the Majorana mode is connected to the first dot, this interference will destroy the majorana signature in the first dot. Interestingly, it is possible to observe a clear majorana signature in the second dot caracterized by a half central peak in the spin-$dw$ DOS. While turning on the first dot gate volge seems to destroy this majorana signature, tuning the second dots gate voltage returns the majorana signature to the first dot. 
+    If the second dot is not directly connected to the lead some interesting results appear. In this set-up the induced tunneling between both dots generated a path difference that destroys the central peak (See FIG\ref{fig:Interference} spin-$\up$ line). If the Majorana mode is connected to the first dot, this interference will destroy the majorana signature in the first dot. Interestingly, it is possible to observe a clear majorana signature in the second dot caracterized by a half central peak in the spin-$dw$ DOS. While turning on the first dot gate volge seems to destroy this majorana signature, tuning the second dots gate voltage returns the majorana signature to the first dot. 
     
 
  %-----------F I G U R E  4 ------
@@ -553,7 +534,7 @@ The Fourier transform of Schrodinger evolution determines the transport equation
         \left(\omega-\epsilon_{M}\right)\Green{f_{\downarrow},d_{1\downarrow}^{\dagger}}&=\frac{t}{\sqrt{2}}\left(\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}-\Green{d_{1\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}\right) \\
     \left(\omega+\epsilon_{M}\right)\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}&=\frac{t}{\sqrt{2}}\left(\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}-\Green{d_{1\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}\right),
 \end{align}
-\noindent which allows us to take $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} = \frac{\omega + \epsilon}{\omega -\epsilon}\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $. Therefore, we can eliminate $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $ from the equations even before starting  Gauss-Jordan elimination.
+\noindent which allows us to take $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} = \frac{\omega + \epsilon}{\omega -\epsilon}\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $. Therefore, we can eliminate $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $ from the equations even before we start Gauss-Jordan process.
 
 Writing the other equations  we obtain the  linear system
 \begin{equation}
@@ -633,7 +614,7 @@ The result of \eqref{eq:DQDMatrix} -  \eqref{eq:rank1} is
 \begin{equation}
     \epsilon^+_{DQD}=\epsilon_{1}+\sum_{\mathbf{k}}\frac{V_{1}V_{1}^{*}}{\omega-\epsilon_{\mathbf{k}}}+\frac{\left\Vert t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right\Vert ^{2}}{\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}} \label{eq:EnDQD}
 \end{equation}
-and the green function of $\Green{d_1d^\dagger_1}$ in a DQD will be given by $\frac{1}{\omega -  \epsilon^+_{DQD}}$ (see FIG.\ref{fig:GraphsDQD}.c)).
+and the green function of $\Green{d_1d^\dagger_1}$ in a DQD will be given by $\frac{1}{\omega -  \epsilon_{DQD}}$ (see FIG.\ref{fig:GraphsDQD}.c)).
 
 \subsection{Solution of the transport equations}
 
