@@ -168,11 +168,6 @@ This idea has turned on new lights into the design of quantum architectures, \ci
 
 % as quasi-particles in certain types of topological materials have increased. The Majoranas are fermions that are their own anti-particle, hence have no charge nor mass. 
 % The Majorana is predicted to be one of the most suitable alternatives to implement fault-tolerant quantum computers. Many experiments showing Majorana signatures in the conductivity have been performed. 
-
-
-
-
-
 % Basics of Majorana Bound states:  zero-energy edge states in 1D topological superconductors.  
 
 % Discovery on semiconductor nanowires \cite{Oreg:Phys.Rev.Lett.:177002:2010,Lutchyn:Phys.Rev.Lett.:77001:2010,Alicea:Reports:2012} etc. Experimental results \cite{Mourik:Science:1003:2012} \LUIS{Add others.}
@@ -191,9 +186,6 @@ This idea has turned on new lights into the design of quantum architectures, \ci
 \label{sec:modelmethods}
 
 %\LUIS{Jesus, put the description of the system and the Hamiltonian here. Put a schematic figure of the DQD setup as well}
-
-
-
 
 We consider the setup shown in Figure \ref{fig:GenModel} in which a Majorana mode at the edge of Topological Superconductor(TS) is coupled to a double quantum dot (DQD), which is attached to a single metallic lead. The Hamiltonian of this system can be partitioned in four terms: the DQD Hamiltonian $H_{DQD}$ , the Lead Hamiltonian $H_{Lead}$ , the DQD-lead interaction  $H_{DQD-Lead}$ and the coupling between the DQD and the Majorana mode $H_{M-DQDs}$ and   
 \begin{equation}
@@ -285,26 +277,38 @@ where $t_i$ is the coupling parameter between the Majorana mode and QD $i$. $\ep
 % \Jesus{Should I put the other terms? }
 
 
-
- 
-% ---------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------
+ % ----------------------------------METHODS------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------------------
 % \newpage
 \subsection{Methods}
 
-\subsection{Non-interacting case \label{sec:non-interactingMethods}}
+\subsection{Non-interacting system \label{sec:non-interactingMethods}}
 
-To study the non-interacting case $(U=0)$, we use Zubarev's ballistic transport approach \cite{zubarev_double-time_1960} to compute the Green functions associated to both quantum dot operators $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$. The detailed procedure is included in Appendix \ref{sec:Appendix_alg}. The transport equations define a linear system where the Hamiltonian parameters $(t_1,t_2,\epsilon_1 \ldots)$ and the energy $\omega$ are taken as fix variables. The flow graph in FIG.\ref{fig:Transport} depicts the linear map associated to the transport in an hybrid Majorana-DQD system  \eqref{eq:TransportMatrix} . The energies of each operator are located at the center of the vertexes while the vertex couplings represent the off-diagonal terms.  The Majorana mode connects two regions of the graph, both of them representing a DQD. The upper DQD is conformed by annihilation operators while the lower one is formed by creation operators. The couplings in the lower part are the  upper parameters multiplied by $-1$. 
+Using Zubarev's ballistic transport approach \cite{zubarev_double-time_1960}, we derived an exact expression for the Green functions associated to both quantum dot operators $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$.  The detailed procedure is included in Appendix \ref{sec:Appendix_alg}. The transport equations define a $9 \times 9$ linear system where the Hamiltonian parameters $(t_1,t_2,\epsilon_1 \ldots)$ and the energy $\omega$ are taken as algebraic variables. The solution of this type of equations is a polynomial fraction of the same degree which makes difficult to provide an exact solution using analytical or numerical methods. To bypass this problem, we associated this transport system to a flow graph and executed a Graph-Gauss-Jordan elimination process \cite{spielman_algorithms_2010}.  This method proofed to be efficient to solve complex transport systems since the graph structure allows us to identify minimum cutting points  and create an algorithmic representation of the Green function. 
 
-To simplify the solution of this system we used a graph linear algorithm  that speeds-up the process of Gauss-Jordan elimination. \cite{spielman_algorithms_2010} Starting with the flow graph at FIG.\ref{fig:Transport} (a), the algorithm successively "pops"  the vertexes till only one vertex remains in the  graph. Popping a vertex must be understood as the Gaussian elimination of the line and the column in the transport matrix containing that vertex (Appendix \ref{sec:Appendix_alg}). This modifies the energies of the vertexes and the coupling parameters. Changing the order of elimination of the vertexes could lead to different equivalent representations of the final polynomial. Finding a suitable elimination order could significantly reduce the complexity of the solution. \cite{spielman_algorithms_2010}  
+% This idea also brings new perspectives to the theory of Majorana systems since the Majorana fermion is an articulation point in the graph that communicates creation and annihilation operators
 
-
-This graph-linear solver algorithm turns out to be particularly good for Majorana systems  since the Majorana fermion is a natural cutting point that divides the graph in two sections. This allows us to exploit the graph structure to simplify the solution of the system  by selecting a suitable order of vertex-elimination . Fig.\ref{fig:Transport} depicts this process. In the first step (a) to (b), we pop consecutively the vertexes $c_{k,\dw},c_{k,\dw}^\dagger , d_{2,\dw} , d^\dagger_{2,\dw}$. The new parameters $\epsilon^{\pm}_{DQD}$ , $M_2$ and $T_\pm$ (See Appendix \ref{sec:Appendix_alg}) are functions of $\epsilon_1 , \epsilon_2 , t_1,t_2$, etc . These functions gather the transport information  through the popped vertexes . The next step is to pop vertexes $d_{1,\dw}^\dagger$ and $f_{\dw}$, which condensed the transport information of the whole system into the remaining vertex $d_{1,\dw}$ . As shown in Appendix \ref{sec:Appendix_alg} the energy of vertex $d_{1,\dw}$ is $\omega - \Green{d_1\dw d^\dagger_1\dw } $, hence giving a very compact expression for the Green function
-
-% This process can be observed graphically in figure \ref{fig:Transport}. In the first step (a) to (b), we pop-out consecutively the vertexes $c_{k,\dw},c_{k,\dw}^\dagger , d_{2,\dw} , d^\dagger_{2,\dw}$. The transport information through these vertexes is   in the operators  $d_{1,\dw}$, $d_{1,\dw}^\dagger$ and $f_\dw$, such that the energies $\epsilon^{\pm}_{DQD}$ accumulate the information of both double quantum dots while the couplings are modified to $T_\pm$. The last step is to pop-out vertexes $d_{1,\dw}^\dagger$ and $f_{\dw}$. At the end of the whole process the energy of the remaining vertex $d_{1,\dw}$ contains the green function $\Green{d_1\dw d^\dagger_1\dw } $ giving this very compact expression
+At the end, we obtained the following analytical expression
 \begin{equation}
     G_{{d_{1\downarrow},d_{1\downarrow}^{\dagger}}}\left(\omega\right)=\frac{1}{\omega-\epsilon_{DQD}^{+}-\frac{\left\Vert T_{+}\right\Vert ^{2}}{\omega-\epsilon_{M2}-\frac{\left\Vert T_{-}\right\Vert ^{2}}{\epsilon_{DQD}^{-}}}}.
     \label{eq:Green_NonInteracting}
 \end{equation}
+\noindent Where
+\begin{equation}
+    \epsilon_{DQD}^{\pm}=\pm\epsilon_{1}+\sum_{\mathbf{k}}\frac{V_{1}V_{1}^{*}}{\omega-\epsilon_{\mathbf{k}}}+\frac{\left\Vert \pm t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right\Vert ^{2}}{\omega\pm\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}, \label{eq:epDQD}
+\end{equation}
+\noindent 
+
+\begin{equation}
+    T_{\pm}=\pm t_{1}\pm t_{2}\frac{\left(\pm t_{dots}+\sum_{\mathbf{k}}\frac{V_{1}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}\right)}{\omega\pm\epsilon_{2}\pm\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}, \label{eq:T+-}
+\end{equation}
+
+\noindent and
+\begin{equation}
+    \epsilon_{M2}=\omega-\epsilon_{M}-\frac{\frac{\omega}{\omega+\epsilon_{M}}\left\Vert t_{2}\right\Vert ^{2} } {\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}-\frac{\frac{\omega}{\omega+\epsilon_{M}}\left\Vert t_{2}\right\Vert ^{2}}{\omega+\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega+\epsilon_{\mathbf{k}}}}. \label{eq:M2}
+\end{equation}
+
 
 
 % Note also that the spin-$\up$ green functions  can be obtained by replacing the Majorana couplings $t_1,t_2 = 0$.
@@ -313,53 +317,104 @@ The final result will depend on the broadening parameter of QD $i$ with the lead
 \begin{equation}
    -i\Gamma_i = \lim_{s\rightarrow 0} \sum_{\boldsymbol{k}}\frac{V_{i}^{*}V_{i}}{\omega+ is -\epsilon_{\boldsymbol{k}}}.
 \end{equation}
-
-By convention we will take $\Gamma_1$ as the energy unit for the rest of the project. Finally we compute the DOS 
-
-
+\noindent By convention we take $\Gamma_1$ as the energy unit for the rest of the project. Finally we compute the DOS 
 \begin{equation}
     \rho_{1\sigma}(\omega)=-\frac{1}{\pi} \textrm{Im} \left[G_{d_{1\sigma},d_{1\sigma}^\dagger}(\omega))\right].
     \label{eq:Density of States}
 \end{equation}
-Similar results can be obtain for the DOS of the second $\rho_{2\sigma}$ . Comparing these results for both dots at the Fermi energy we will be able to determine which dot exhibits a Majorana signature.
+\noindent Similar results can be obtain for the DOS of the second $\rho_{2\sigma}$ by exchanging the indexes $1$ and $2$ in equation \eqref{eq:Green_NonInteracting}. 
 
-
-% The green functions $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$  obtained through Gauss-Jordan elimination constitute fractional polynomial with more than $300$ independent linear components. To provide a tractable decomposition of this polynomial we used a graph theory-inspired linear algorithm that emulates a Laplacian linear solver . Although this Hamiltonian is not Laplacian,  this method still provides a shortcut to Gauss-Jordan elimination by taking advantage of the minimal cuttings in the graph. As a matter of fact , this graph approach is especially good for Majorana systems  since the Majorana fermion is a natural cutting point that divides two sections of the graph.  
-% In addition the graph contraction facilitates a legible representation of the fractional polynomial.
-% The solution of this problem can be achieved through 
-% In a system without Majorana fermions these two regions are disconnected. The new physical   
-
-% The process of Gauss-Jordan elimination used to solved this cases can be strongly speede
-
-% The solution for the green function  will finally be a polynomial fraction over these variables. 
-
-% This can be done by  Gauss-Jordan elimination, noting that after each elimination process we need to carry on the account in terms of these variables.   When the number of operators in the Hamiltonian increases the number of terms in the polynomial grows-up exponentially. This reveals the importance of exploring new methods that could simplify the solution.   \\
+The density of states provides significant information about the presence of a Majorana zero modes in the dot. The Majorana signature is characterized by a robust zero-mode with height equal to: 1) $\frac{0.5}{\pi \Gamma}$ or 2) The half of the spin-$\uparrow$ DOS. Considering that only the spin-$\downarrow$ channel is connected to the Majorana mode and that the spin-$\uparrow$ and spin-$\downarrow$ channels are decoupled in non-interacting systems, the existence of this second type of Majorana signature is intriguing.   
 
 
 
-%-----------F I G U R E  2 ------
 
-    \begin{figure}[t]
-    \begin{center}
-    \centering
-     \includegraphics[scale=0.29]{Graficos/Graphs-DQD-M-Pro.png}
-    % \includegraphics[scale=0.25]{Graficos/graphContractions.png}
-    \caption{ Transport flow in a DQD Majorana system.   \label{fig:Transport}
-    }
-    %
+
+% To simplify the solution of this system we used a graph linear algorithm  that speeds-up the process of Gauss-Jordan elimination. \cite{spielman_algorithms_2010} Starting with the flow graph at FIG.\ref{fig:Transport} (a), the algorithm successively "pops"  the vertexes till only one vertex remains in the  graph. Popping a vertex must be understood as the Gaussian elimination of the line and the column in the transport matrix containing that vertex (Appendix \ref{sec:Appendix_alg}). This modifies the energies of the vertexes and the coupling parameters. Changing the order of elimination of the vertexes could lead to different equivalent representations of the final polynomial. Finding a suitable elimination order could significantly reduce the complexity of the solution. \cite{spielman_algorithms_2010}  
+
+
+% The flow graph in FIG.\ref{fig:Transport} depicts the linear map associated to the transport in an hybrid Majorana-DQD system  \eqref{eq:TransportMatrix} . The energies of each operator are located at the center of the vertexes while the vertex couplings represent the off-diagonal terms.  The Majorana mode connects two regions of the graph, both of them representing a DQD. The upper DQD is conformed by annihilation operators while the lower one is formed by creation operators. The couplings in the lower part are the  upper parameters multiplied by $-1$. 
+
+% to study the non-interacting system $U=0$. Without 
+
+
+
+
+
+
+% To study the non-interacting case $(U=0)$, we use Zubarev's ballistic transport approach \cite{zubarev_double-time_1960} to compute the Green functions associated to both quantum dot operators $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$. The detailed procedure is included in Appendix \ref{sec:Appendix_alg}. The transport equations define a linear system where the Hamiltonian parameters $(t_1,t_2,\epsilon_1 \ldots)$ and the energy $\omega$ are taken as fix variables. The flow graph in FIG.\ref{fig:Transport} depicts the linear map associated to the transport in an hybrid Majorana-DQD system  \eqref{eq:TransportMatrix} . The energies of each operator are located at the center of the vertexes while the vertex couplings represent the off-diagonal terms.  The Majorana mode connects two regions of the graph, both of them representing a DQD. The upper DQD is conformed by annihilation operators while the lower one is formed by creation operators. The couplings in the lower part are the  upper parameters multiplied by $-1$. 
+
+% To simplify the solution of this system we used a graph linear algorithm  that speeds-up the process of Gauss-Jordan elimination. \cite{spielman_algorithms_2010} Starting with the flow graph at FIG.\ref{fig:Transport} (a), the algorithm successively "pops"  the vertexes till only one vertex remains in the  graph. Popping a vertex must be understood as the Gaussian elimination of the line and the column in the transport matrix containing that vertex (Appendix \ref{sec:Appendix_alg}). This modifies the energies of the vertexes and the coupling parameters. Changing the order of elimination of the vertexes could lead to different equivalent representations of the final polynomial. Finding a suitable elimination order could significantly reduce the complexity of the solution. \cite{spielman_algorithms_2010}  
+
+
+% This graph-linear solver algorithm turns out to be particularly good for Majorana systems  since the Majorana fermion is a natural cutting point that divides the graph in two sections. This allows us to exploit the graph structure to simplify the solution of the system  by selecting a suitable order of vertex-elimination . Fig.\ref{fig:Transport} depicts this process. In the first step (a) to (b), we pop consecutively the vertexes $c_{k,\dw},c_{k,\dw}^\dagger , d_{2,\dw} , d^\dagger_{2,\dw}$. The new parameters $\epsilon^{\pm}_{DQD}$ , $M_2$ and $T_\pm$ (See Appendix \ref{sec:Appendix_alg}) are functions of $\epsilon_1 , \epsilon_2 , t_1,t_2$, etc . These functions gather the transport information  through the popped vertexes . The next step is to pop vertexes $d_{1,\dw}^\dagger$ and $f_{\dw}$, which condensed the transport information of the whole system into the remaining vertex $d_{1,\dw}$ . As shown in Appendix \ref{sec:Appendix_alg} the energy of vertex $d_{1,\dw}$ is $\omega - \Green{d_1\dw d^\dagger_1\dw } $, hence giving a very compact expression for the Green function
+
+% % This process can be observed graphically in figure \ref{fig:Transport}. In the first step (a) to (b), we pop-out consecutively the vertexes $c_{k,\dw},c_{k,\dw}^\dagger , d_{2,\dw} , d^\dagger_{2,\dw}$. The transport information through these vertexes is   in the operators  $d_{1,\dw}$, $d_{1,\dw}^\dagger$ and $f_\dw$, such that the energies $\epsilon^{\pm}_{DQD}$ accumulate the information of both double quantum dots while the couplings are modified to $T_\pm$. The last step is to pop-out vertexes $d_{1,\dw}^\dagger$ and $f_{\dw}$. At the end of the whole process the energy of the remaining vertex $d_{1,\dw}$ contains the green function $\Green{d_1\dw d^\dagger_1\dw } $ giving this very compact expression
+% \begin{equation}
+%     G_{{d_{1\downarrow},d_{1\downarrow}^{\dagger}}}\left(\omega\right)=\frac{1}{\omega-\epsilon_{DQD}^{+}-\frac{\left\Vert T_{+}\right\Vert ^{2}}{\omega-\epsilon_{M2}-\frac{\left\Vert T_{-}\right\Vert ^{2}}{\epsilon_{DQD}^{-}}}}.
+%     \label{eq:Green_NonInteracting}
+% \end{equation}
+
+
+% % Note also that the spin-$\up$ green functions  can be obtained by replacing the Majorana couplings $t_1,t_2 = 0$.
+% The final result will depend on the broadening parameter of QD $i$ with the lead $(\Gamma_i)$. This broadening satisfies the equation
+
+% \begin{equation}
+%    -i\Gamma_i = \lim_{s\rightarrow 0} \sum_{\boldsymbol{k}}\frac{V_{i}^{*}V_{i}}{\omega+ is -\epsilon_{\boldsymbol{k}}}.
+% \end{equation}
+
+% By convention we will take $\Gamma_1$ as the energy unit for the rest of the project. Finally we compute the DOS 
+
+
+% \begin{equation}
+%     \rho_{1\sigma}(\omega)=-\frac{1}{\pi} \textrm{Im} \left[G_{d_{1\sigma},d_{1\sigma}^\dagger}(\omega))\right].
+%     \label{eq:Density of States}
+% \end{equation}
+% Similar results can be obtain for the DOS of the second $\rho_{2\sigma}$ . Comparing these results for both dots at the Fermi energy we will be able to determine which dot exhibits a Majorana signature.
+
+
+% % The green functions $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$  obtained through Gauss-Jordan elimination constitute fractional polynomial with more than $300$ independent linear components. To provide a tractable decomposition of this polynomial we used a graph theory-inspired linear algorithm that emulates a Laplacian linear solver . Although this Hamiltonian is not Laplacian,  this method still provides a shortcut to Gauss-Jordan elimination by taking advantage of the minimal cuttings in the graph. As a matter of fact , this graph approach is especially good for Majorana systems  since the Majorana fermion is a natural cutting point that divides two sections of the graph.  
+% % In addition the graph contraction facilitates a legible representation of the fractional polynomial.
+% % The solution of this problem can be achieved through 
+% % In a system without Majorana fermions these two regions are disconnected. The new physical   
+
+% % The process of Gauss-Jordan elimination used to solved this cases can be strongly speede
+
+% % The solution for the green function  will finally be a polynomial fraction over these variables. 
+
+% % This can be done by  Gauss-Jordan elimination, noting that after each elimination process we need to carry on the account in terms of these variables.   When the number of operators in the Hamiltonian increases the number of terms in the polynomial grows-up exponentially. This reveals the importance of exploring new methods that could simplify the solution.   \\
+
+
+
+% %-----------F I G U R E  2 ------
+
+%     \begin{figure}[t]
+%     \begin{center}
+%     \centering
+%      \includegraphics[scale=0.29]{Graficos/Graphs-DQD-M-Pro.png}
+%     % \includegraphics[scale=0.25]{Graficos/graphContractions.png}
+%     \caption{ Transport flow in a DQD Majorana system.   \label{fig:Transport}
+%     }
+%     %
     
-    \end{center}
-    \end{figure}
+%     \end{center}
+%     \end{figure}
 
-%-----------E N D  F I G U R E  2 ------
+% %-----------E N D  F I G U R E  2 ------
 
 %
 
 \subsection{Interacting case (NRG)}
-For the interacting case, we used the Numerical Renormalization Group (NRG) approach \cite{wilson_renormalization_1975,sindel_numerical_2005,bulla_numerical_2008}. The algorithm assumes a coulomb repulsion of $U =17.3\Gamma_1$ at both dots and a cut-off energy $D=2U=34.6\Gamma_1$. The spacing between the nearest energy levels is assumed to be higher than $D$, hence only one level is relevant in dynamics of the system. Particle-Hole-Symmetry at each dot is obtained when  $\epsilon_i = \frac{U}{2}$. At this point, there is an odd number of electrons at each dot. Hence, at sufficiently low temperature the system will exhibit the characteristic Kondo peak \citet{wilson_renormalization_1975}. Observing how the Kondo-effect interacts with the Majorana signature in the double quantum dot is also an insight of this project. 
+
+% For the interacting case, we used the Numerical Renormalization Group (NRG) approach \cite{wilson_renormalization_1975,sindel_numerical_2005,bulla_numerical_2008}.
+
+The Numerical Renormalization Group (NRG) \cite{wilson_renormalization_1975,sindel_numerical_2005,bulla_numerical_2008} is the most successful methods to study interacting quantum impurity models. In this project, the impurity is described by the DQD attached to a Majorana mode. Our code a coulomb repulsion factor of $U =17.3\Gamma_1$ in both dots and a cut-off energy of $D=2U=34.6\Gamma_1$. The spacing with other energy levels is assumed to be higher than $D$, such that only the two coulomb states are relevant for the system dynamics. Particle-Hole-Symmetry at each dot is obtained when  $\epsilon_i = \frac{U}{2}$ in both dots. At this point, each dot has an odd number of electrons, hence, at sufficiently low temperature the system will exhibit the characteristic Kondo peaks at the Fermi energy \citet{wilson_renormalization_1975}. The coexistence of Kondo and Majorana zero modes is still a point of contention in the area and one of the objectives of this part of the project
 
 
-To  improve the efficiency of the code we took advantage of the preserved symmetries: The spin-$\up$ particle number $\hat{N}_\up$ and the spin-$\dw$ parity $\hat{P}_\dw = \pm $ ($+$ even, $-$ odd). The spin-$\dw$ particle number is not preserved due to the majorana coupling \eqref{eq:H_MDQD} . The initial Hamiltonian is organized in blocks according to these symmetries. This block structure is preserved during the entire iteration process \cite{bulla_numerical_2008}. To compute the spectral functions we use the density matrix renormalization group (DM-NRG) approach. \cite{hofstetter_generalized_2000}
+% Observing how the Kondo-effect interacts with the Majorana signature in the double quantum dot is also an insight of this project. 
+
+
+To  improve the efficiency of the code we took advantage of the preserved symmetries: The spin-$\up$ particle number $\hat{N}_\up$ and the spin-$\dw$ parity $\hat{P}_\dw = \pm $ ($+$ even, $-$ odd). The spin-$\dw$ particle number is not preserved due to superconducting-type Majorana coupling \eqref{eq:H_MDQD} . The initial Hamiltonian is organized in blocks according to these symmetries. This block structure is preserved during the entire iteration process \cite{bulla_numerical_2008}. To compute the spectral functions we use the density matrix renormalization group (DM-NRG) approach. \cite{hofstetter_generalized_2000} In addition, the spectral resolution at high energies is optimized through the renown Z-trick method \cite{oliveira_generalized_1994}. 
   
 %   To unify the units of the interacting and non-interacting case we pick $U=8.69\Gamma_1$ and we let $D = 2U_1=17.3 \Gamma_1$.
  \section{Results}
@@ -367,42 +422,55 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.5]{Graficos/MajoranaModels.png}
-\caption{\label{fig:MajoranaModels}  Manipulation of majorana signatures according to the different connections
+\caption{\label{fig:MajoranaModels}  Cases of study: (a) Symmetric coupling of the DQD to the lead and the MZM. No inter-dot coupling. (b)\&(c) Indirect coupling of the second QD through the first dot. The Majorana is coupled to the (b) first dot or to the (c) second dot. 
 }
 %
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  3 ------
 
-     \subsection{Majorana manipulation in non-interacting quantum dots}
-     In non-interacting dots $(U=0)$, the density of states at each dot can be obtained from equation \eqref{eq:Density of States} by replacing the green function at \eqref{eq:Green_NonInteracting}. The manipulation of the Majorana mode is achieved by  tuning the model parameters $(t_1,t_2, \epsilon_1 , \epsilon_2 , t_dots)$. Fig.\ref{fig:MajoranaModels} shows 9 possible processes. The first column shows a symmetric coupling of both QDs with the lead and the Majorana mode. In columns two and three the second dot is attached inderectly to the lead through the first dot. The majorana mode can be either attached to the first dot (column 2) or to the second dot (column 3). In the first row we assume that the gate voltage through both dots is $0$ $(\epsilon_1 = \epsilon_2 = 0)$, hence the density of states is particle hole symmetric $(\rho(\omega) = \rho(-\omega))$. The majorana signature can be manipulated by increasing the gate voltage at QD1 (second row) or QD2(third row). 
+     \subsection{MZM manipulation in non-interacting quantum dots}
+     % In non-interacting dots $(U=0)$, the density of states at each dot can be obtained from equation \eqref{eq:Density of States} by replacing the green function at \eqref{eq:Green_NonInteracting}. 
+     We call MZM manipulation to the "movement" of the Majorana signature under the tunning of the dot gate voltage $( \epsilon_1 , \epsilon_2 )$. This manipulation process is performed in three different set ups that are presented in Fig.\ref{fig:MajoranaModels} with definite values of $\Gamma_2$, $t_dots$, $t_1$ and $t_2$. In configuration (a), we coupled the QD symmetrically to the lead and the Majorana mode. With this setup we expect to break the localization of the MZM which should split and tunnel into both dots. In setups (b) and (c) we coupled the second dot indirectly through the first dot. Hence, quantum  interference should split the zero mode in two states. Our objective is to observe what occurs with the Majorana signature in this case. There are to options to connect the MZM in this situation. Attached it directly through the first dot (b) or indirectly through the second dot.
+
+
+ 	 The non-interacting results for setups (a),(b) and (c) of FIG.\ref{fig:MajoranaModels} are shown at figures FIG.\ref{fig:t1=t2}, FIG.\ref{fig:t1>0} and FIG.\ref{fig:t2>0} respectively. Each figure depicts the DOS of dot $1$(left) and dot $2$(right). The gate voltage is initially $0$ in both dots at the first row. In the second row the gate voltage is  $5\Gamma_1$ in the first dot and $0$ in the second dot, while in the third row it is $0$ in the first dot an $-5\Gamma_1$ in the secon dot. The insets at each row represent the dots that exhibit Majorana signature, which is depicted by a red dashed circle inside the dot. 
+     
+     % The manipulation of the Majorana mode is achieved by  tuning the model parameters $(t_1,t_2, \epsilon_1 , \epsilon_2 , t_dots)$. Fig.\ref{fig:MajoranaModels} shows 9 possible processes. The first column shows a symmetric coupling of both QDs with the lead and the Majorana mode. In columns two and three the second dot is attached inderectly to the lead through the first dot. The majorana mode can be either attached to the first dot (column 2) or to the second dot (column 3). In the first row we assume that the gate voltage through both dots is $0$ $(\epsilon_1 = \epsilon_2 = 0)$, hence the density of states is particle hole symmetric $(\rho(\omega) = \rho(-\omega))$. The majorana signature can be manipulated by increasing the gate voltage at QD1 (second row) or QD2(third row). 
      
  %-----------F I G U R E  3 ------
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.48]{Graficos/t1=t2.png}
-\caption{ \label{fig:SymCoupling}  Density of states in the symmetric coupling arrangement (Fig.\ref{fig:MajoranaModels} first column). Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.  
+\caption{ \label{fig:t1=t2}  Density of states in the symmetric coupling arrangement (Fig.\ref{fig:MajoranaModels} first column). Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.  
 }
 %
-\label{fig:GenModel}
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  3 ------
+     % Figure \ref{fig:t1=t2}.
      
+     % The density of states for setup (a) in FIG.\ref{fig:MajoranaModels}) is shown in Figure \ref{fig:t1=t2}. S
+
+
+     % ince the model is non-interacting, spin-$\up$ and spin-$\dw$ models are independent. 
+     In FIG.\ref{fig:t1=t2} we observe the results for the symmetric setup FIG.\ref{fig:MajoranaModels}(a). In the particle hole symmetric case(first line) the DOS is equal in both dots. Note that that the spin-$\dw$ DOS is the half of the spin-$DOS$ at the Fermi energy $\rho_\dw(0) = \rho_\up(0)$. This Majorana signature is similar to the one observed when a single dot is coupled to a Majorana mode. \cite{liu_detecting_2011} We may conclude that the Majorana tunnels inside both dots. If a positive or negative gate voltage is induced in one of the dots, as shown in the second and third row of Figure \ref{fig:SymCoupling},  the Majorana zero mode vanishes. Meanwhile the density of states in the other dot increases while preserving the Majorana signature. Thus, by activating the gate voltage in one of the dots it is possible to induce the majorana mode to leave to the other dot. 
+
+     % Majorana signature in the other dot recovers the form observed in the single dot-Majorana model.  
+ 
+
+     The spin-$\dw$ DOS (dashed line) shows the effects caused by the majorana mode in comparison with the spin-$\up$  results (solid line). In the particle hole symmetric case the DOS is equal in both dots. Note that that the spin-$\dw$ DOS is the half of the spin-$DOS$ at the fermi energy $\rho_\dw(0) = \rho_\up(0)$. This is a Majorana signature similar to the one observed in the single dot case \cite{liu_detecting_2011}. Hence, the majorana tunnels inside both dots. When a possitive or negative gate voltage is induced in one of the dots,  the Majorana mode is induced to leave that dot. As consequence the majorana signature will only appear in the other dot. 
      
-     The density of states for the setups in column $1$ (FIG.\ref{fig:MajoranaModels}) is shown in Figure \ref{fig:SymCoupling}. Since the model is non-interacting, spin-$\up$ and spin-$\dw$ models are independent. The spin-$\dw$ DOS (dashed line) shows the effects caused by the majorana mode in comparison with the spin-$\up$  results (solid line). In the particle hole symmetric case the DOS is equal in both dots. Note that that the spin-$\dw$ DOS is the half of the spin-$DOS$ at the fermi energy $\rho_\dw(0) = \rho_\up(0)$. This is a Majorana signature similar to the one observed in the single dot case \cite{liu_detecting_2011}. Hence, the majorana tunnels inside both dots. When a possitive or negative gate voltage is induced in one of the dots,  the Majorana mode is induced to leave that dot. As consequence the majorana signature will only appear in the other dot. 
-     
-    If the second dot is not directly connected to the lead the induced tunneling between both dots generates a path difference that destroys the central peak (See FIG\ref{fig:Interference} spin-$\up$ line). If the Majorana mode is connected to the first dot, this interference will destroy the majorana signature in the first dot. Interestingly, it is possible to observe a clear majorana signature in the second dot caracterized by a half central peak in the spin-$dw$ DOS. While turning on the first dot gate volge seems to destroy this majorana signature, tuning the second dots gate voltage returns the majorana signature to the first dot. 
+    If the second dot is not directly connected to the lead the induced tunneling between both dots generates a path difference that destroys the central peak (See FIG\ref{fig:t1>0} spin-$\up$ line). If the Majorana mode is connected to the first dot, this interference will destroy the majorana signature in the first dot. Interestingly, it is possible to observe a clear majorana signature in the second dot caracterized by a half central peak in the spin-$dw$ DOS. While turning on the first dot gate volge seems to destroy this majorana signature, tuning the second dots gate voltage returns the majorana signature to the first dot. 
     
 
  %-----------F I G U R E  4 ------
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.48]{Graficos/t1>0.png}
-\caption{  \label{fig:Interference} Density of states in both dots of the case where the only the first QD is attached to both Majorana and Lead (Fig.\ref{fig:MajoranaModels} second column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.
+\caption{  \label{fig:t1>0} Density of states in both dots of the case where the only the first QD is attached to both Majorana and Lead (Fig.\ref{fig:MajoranaModels} second column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.
 }
 %
-\label{fig:GenModel}
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  4 ------
@@ -421,10 +489,9 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.48]{Graficos/t2>0.png}
-\caption{  \label{fig:IndirectMajorana} Density of states of both dots in the case where only de first QD is attached to the lead and the Majorana mode is attached to the second QD.  (Fig.\ref{fig:MajoranaModels} third column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS. 
+\caption{  \label{fig:t2>0} Density of states of both dots in the case where only de first QD is attached to the lead and the Majorana mode is attached to the second QD.  (Fig.\ref{fig:MajoranaModels} third column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS. 
 }
 %
-\label{fig:GenModel}
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  5 ------
@@ -437,7 +504,6 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 \includegraphics[scale=0.4]{Graficos/NRG-t1=t2.png}
 \caption{  \label{fig:NRG_Majorana} Density of states of both dots in the symmetric coupling case between the Majorana and the interacting DQD. Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS. 
 }
-\label{fig:GenModel}
 \end{center}
 \end{figure}
     %-----------E N D  F I G U R E  6 ------
@@ -460,10 +526,9 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
 \begin{figure}[bt]
 \begin{center}
 \includegraphics[scale=0.45]{Graficos/Nt1=t2.png}
-\caption{ \label{fig:SymCoupling}  Density of states in the symmetric coupling arrangement (Fig.\ref{fig:MajoranaModels} first column). Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.  
+\caption{ \label{fig:t1=t2}  Density of states in the symmetric coupling arrangement (Fig.\ref{fig:MajoranaModels} first column). Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.  
 }
 %
-\label{fig:GenModel}
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  7 ------
@@ -474,11 +539,10 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
  %-----------F I G U R E  4 ------
 \begin{figure}[bt]
 \begin{center}
-\includegraphics[scale=0.45]{Graficos/Nt1>0.png}
-\caption{  \label{fig:Interference} Density of states in both dots of the case where the only the first QD is attached to both Majorana and Lead (Fig.\ref{fig:MajoranaModels} second column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.
+\includegraphics[scale=0.45]{Graficos/b)Nt1>0.png}
+\caption{  \label{fig:Nt1>0} Density of states in both dots of the case where the only the first QD is attached to both Majorana and Lead (Fig.\ref{fig:MajoranaModels} second column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS.
 }
 %
-\label{fig:GenModel}
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  4 ------
@@ -487,11 +551,11 @@ To  improve the efficiency of the code we took advantage of the preserved symmet
   %-----------F I G U R E  5 ------
 \begin{figure}[bt]
 \begin{center}
-\includegraphics[scale=0.45]{Graficos/Nt2>0.png}
-\caption{  \label{fig:IndirectMajorana} Density of states of both dots in the case where only de first QD is attached to the lead and the Majorana mode is attached to the second QD.  (Fig.\ref{fig:MajoranaModels} third column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS. 
+\includegraphics[scale=0.45]{Graficos/b)Nt2>0.png}
+\caption{  \label{fig:Nt2>0} Density of states of both dots in the case where only de first QD is attached to the lead and the Majorana mode is attached to the second QD.  (Fig.\ref{fig:MajoranaModels} third column) . Solid lines: Spin-$\up$ DOS. Dashed lines: Spin-$\dw$ DOS. 
 }
 %
-\label{fig:GenModel}
+
 \end{center}
 \end{figure}
 %-----------E N D  F I G U R E  5 ------
@@ -622,6 +686,27 @@ To explain the process of Gaussian elimination we will obtain the green function
 \end{equation}
 The result of \eqref{eq:DQDMatrix} -  \eqref{eq:rank1} is 
 
+
+
+%-----------F I G U R E  2 ------
+
+    \begin{figure}[t]
+    \begin{center}
+    \centering
+     \includegraphics[scale=0.29]{Graficos/Graphs-DQD-M-Pro.png}
+    % \includegraphics[scale=0.25]{Graficos/graphContractions.png}
+    \caption{ Transport flow in a DQD Majorana system.   \label{fig:Transport}
+    }
+    %
+    
+    \end{center}
+    \end{figure}
+
+%-----------E N D  F I G U R E  2 ------
+
+
+
+
 \begin{equation}
         \left[\begin{array}{ccc}
     \omega-\epsilon_{1}-\frac{V_{1}^{*}V_{1}}{\omega-\epsilon_{k}} & 0 & -t_{dots}-\frac{V_{2}V_{1}^{*}}{\omega-\epsilon_{k}}\\
@@ -667,8 +752,13 @@ Finally since the Majorana is in contact with dot $2$, there is an extra-term ap
 \begin{equation}
     \epsilon_{M2}=\omega-\epsilon_{M}-\frac{\frac{\omega}{\omega+\epsilon_{M}}\left\Vert t_{2}\right\Vert ^{2} } {\omega-\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega-\epsilon_{\mathbf{k}}}}-\frac{\frac{\omega}{\omega+\epsilon_{M}}\left\Vert t_{2}\right\Vert ^{2}}{\omega+\epsilon_{2}-\sum_{\mathbf{k}}\frac{V_{2}V_{2}^{*}}{\omega+\epsilon_{\mathbf{k}}}}. \label{eq:M2}
 \end{equation}
-With all the terms of the graph in FIG.\ref{fig:Transport}.b) computed, it only remains to pop out vertexes $d^\dagger_1$ and $f_\dw$ in that order to obtain the green function in equation \eqref{eq:Green_NonInteracting}. 
+With all the terms of the graph in FIG.\ref{fig:Transport}.b) computed, it only remains to pop out vertexes $d^\dagger_1$ and $f_\dw$ in that order to obtain the result in equation \eqref{eq:Green_NonInteracting}. 
 
+
+\begin{equation}
+    G_{{d_{1\downarrow},d_{1\downarrow}^{\dagger}}}\left(\omega\right)=\frac{1}{\omega-\epsilon_{DQD}^{+}-\frac{\left\Vert T_{+}\right\Vert ^{2}}{\omega-\epsilon_{M2}-\frac{\left\Vert T_{-}\right\Vert ^{2}}{\epsilon_{DQD}^{-}}}}.
+    % \label{eq:Green_NonInteracting}
+\end{equation}
 
 
 
@@ -703,6 +793,58 @@ With all the terms of the graph in FIG.\ref{fig:Transport}.b) computed, it only 
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

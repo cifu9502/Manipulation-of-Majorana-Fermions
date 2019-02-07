@@ -1,16 +1,16 @@
-\BOOKMARK [0][-]{section*.2}{ Manipulation of Majorana Modes in a Double Quantum Dot }{}% 2
+\BOOKMARK [0][-]{section*.2}{ Manipulating Majorana Zero Modes using Double Quantum Dots }{}% 2
 \BOOKMARK [1][-]{section*.1}{Abstract}{section*.2}% 1
 \BOOKMARK [1][-]{section*.3}{Introduction}{section*.2}% 3
 \BOOKMARK [1][-]{section*.4}{Model and methods}{section*.2}% 4
 \BOOKMARK [2][-]{section*.6}{Methods}{section*.4}% 5
-\BOOKMARK [2][-]{section*.7}{Non-interacting case }{section*.4}% 6
-\BOOKMARK [2][-]{section*.9}{Interacting case \(NRG\)}{section*.4}% 7
-\BOOKMARK [1][-]{section*.10}{Results}{section*.2}% 8
-\BOOKMARK [2][-]{section*.12}{Majorana manipulation in non-interacting quantum dots}{section*.10}% 9
-\BOOKMARK [2][-]{section*.16}{Majorana manipulation in interacting dots}{section*.10}% 10
-\BOOKMARK [1][-]{section*.21}{Concluding remarks}{section*.2}% 11
-\BOOKMARK [1][-]{section*.22}{Acknowledgments}{section*.2}% 12
-\BOOKMARK [1][-]{section*.23}{References}{section*.2}% 13
-\BOOKMARK [1][-]{section*.24}{Computation of the Green Function }{section*.2}% 14
-\BOOKMARK [2][-]{section*.25}{The double quantum dot}{section*.24}% 15
-\BOOKMARK [2][-]{section*.27}{Solution of the transport equations}{section*.24}% 16
+\BOOKMARK [2][-]{section*.7}{Non-interacting system }{section*.4}% 6
+\BOOKMARK [2][-]{section*.8}{Interacting case \(NRG\)}{section*.4}% 7
+\BOOKMARK [1][-]{section*.9}{Results}{section*.2}% 8
+\BOOKMARK [2][-]{section*.11}{MZM manipulation in non-interacting quantum dots}{section*.9}% 9
+\BOOKMARK [2][-]{section*.15}{Majorana manipulation in interacting dots}{section*.9}% 10
+\BOOKMARK [1][-]{section*.20}{Concluding remarks}{section*.2}% 11
+\BOOKMARK [1][-]{section*.21}{Acknowledgments}{section*.2}% 12
+\BOOKMARK [1][-]{section*.22}{References}{section*.2}% 13
+\BOOKMARK [1][-]{section*.23}{Computation of the Green Function }{section*.2}% 14
+\BOOKMARK [2][-]{section*.24}{The double quantum dot}{section*.23}% 15
+\BOOKMARK [2][-]{section*.27}{Solution of the transport equations}{section*.23}% 16
