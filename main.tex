@@ -293,7 +293,15 @@ At the end, we obtained the following analytical expression
 
 
 % Note also that the spin-$\up$ green functions  can be obtained by replacing the Majorana couplings $t_1,t_2 = 0$.
-The final result will depend on the broadening parameter of QD $i$ with the lead $(\Gamma_i)$. This broadening satisfies the equation
+
+\noindent On the other hand the spin-$\up$ DOS, which is not coupled to the MZM, can be obtained by taking $t_1,t_2 = 0$, hence giving
+\begin{equation}
+    G_{{d_{1\uparrow},d_{1\uparrow}^{\dagger}}}\left(\omega\right)=\frac{1}{\omega-\epsilon_{DQD}^{+}}.
+    \label{eq:Green_NonInteracting}
+\end{equation}
+
+
+The final results will depend on the broadening parameter of QD $i$ with the lead $(\Gamma_i)$. This broadening satisfies the equation
 
 \begin{equation}
    -i\Gamma_i = \lim_{s\rightarrow 0} \sum_{\boldsymbol{k}}\frac{V_{i}^{*}V_{i}}{\omega+ is -\epsilon_{\boldsymbol{k}}}.
@@ -426,8 +434,31 @@ To  improve the efficiency of the code we used the symmetries of the system to m
      % In non-interacting dots $(U=0)$, the density of states at each dot can be obtained from equation \eqref{eq:Density of States} by replacing the green function at \eqref{eq:Green_NonInteracting}. 
      We call MZM manipulation to the "movements" attributed to the Majorana signature under the tunning of the dot gate voltages $( \epsilon_1 , \epsilon_2 )$. This manipulation process is performed in three different set ups that are presented in Fig.\ref{fig:MajoranaModels} with definite values of $\Gamma_2$, $t_dots$, $t_1$ and $t_2$. In configuration (a), we coupled the QD symmetrically to the lead and the Majorana mode. With this setup we expect to break the localization of the MZM which should split and tunnel into both dots. In setups (b) and (c) we coupled the second dot indirectly through the first dot. Hence, quantum  interference should split the zero mode in two states. Our objective is to observe what occurs with the Majorana signature in this case. There are to options to connect the MZM in this situation. Attached it directly through the first dot (b) or indirectly through the second dot (c). 
 
+      %-----------F I G U R E  4 ------
+\begin{figure}[bt]
+\begin{center}
+\includegraphics[scale=0.48]{Graficos/t1>0.png}
+\caption{  \label{fig:t1>0} Non-interaction DOS of the setup in Fig.\ref{fig:MajoranaModels}(b) . Bold blue lines: Spin-$\up$ DOS. Thin red lines: Spin-$\dw$ DOS.
+}
+%
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  4 ------
+
 
  	 The non-interacting results for setups (a),(b) and (c) of FIG.\ref{fig:MajoranaModels} are shown at figures FIG.\ref{fig:t1=t2}, FIG.\ref{fig:t1>0} and FIG.\ref{fig:t2>0} respectively. Each figure depicts the DOS of dot $1$(left) and dot $2$(right). The gate voltage is initially $0$ in both dots at the first row. In the second row the gate voltage is turned on to  $\epsilon_1 = 5\Gamma_1$ in the first dot and remains at $\epsilon_2 = 0$ in the second dot. In the third row the first dot's voltage is off $\epsilon_1=0$ and we turn on the second dot with a negative voltage of $\epsilon_2 = -5\Gamma_1$. The insets at each row shows which dots exhibit Majorana signatures, depicted by a red dashed circle inside the dot. These images will continuously change under the tuning of gate voltages which represents the manipulation of the Majorana signature.
+
+
+ %-----------F I G U R E  5 ------
+\begin{figure}[bt]
+\begin{center}
+\includegraphics[scale=0.48]{Graficos/t2>0.png}
+\caption{  \label{fig:t2>0} Non-interaction DOS of the set up in Fig.\ref{fig:MajoranaModels}(c) . Bold blue lines: Spin-$\up$ DOS. Thin red lines: Spin-$\dw$ DOS.. 
+}
+%
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  5 ------
      
      % The manipulation of the Majorana mode is achieved by  tuning the model parameters $(t_1,t_2, \epsilon_1 , \epsilon_2 , t_dots)$. Fig.\ref{fig:MajoranaModels} shows 9 possible processes. The first column shows a symmetric coupling of both QDs with the lead and the Majorana mode. In columns two and three the second dot is attached inderectly to the lead through the first dot. The majorana mode can be either attached to the first dot (column 2) or to the second dot (column 3). In the first row we assume that the gate voltage through both dots is $0$ $(\epsilon_1 = \epsilon_2 = 0)$, hence the density of states is particle hole symmetric $(\rho(\omega) = \rho(-\omega))$. The majorana signature can be manipulated by increasing the gate voltage at QD1 (second row) or QD2(third row). 
      
@@ -441,16 +472,7 @@ To  improve the efficiency of the code we used the symmetries of the system to m
      In FIG.\ref{fig:t1=t2} we observe the results for the symmetric coupling setup FIG.\ref{fig:MajoranaModels}(a). In the particle hole symmetric case (first row) the DOS is equal in both dots. Note that that the spin-$\dw$ (Thin red line) DOS is the half of the spin-$\up$ (Bold blue line) DOS at the Fermi energy $(\rho_\dw(0) = \frac{1}{2}\rho_\up(0))$. This Majorana signature is similar to the one observed when a single dot is coupled to a Majorana mode. \cite{liu_detecting_2011} We may conclude that the Majorana in tunneling inside both dots breaking the localization of the MZM. If a positive or negative gate voltage is induced in one of the dots, as shown in the second and third row of Figure \ref{fig:t1=t2}(c)-(f),  the Majorana zero mode vanishes from that dot. Meanwhile the density of states in the other dot increases while preserving the Majorana signature. This means that the MZM is actually being induced to "leave" this dots and leak into the other dot by the gate voltage activation. This first example of MZM manipulation. 
 
 
- %-----------F I G U R E  4 ------
-\begin{figure}[bt]
-\begin{center}
-\includegraphics[scale=0.48]{Graficos/t1>0.png}
-\caption{  \label{fig:t1>0} Non-interaction DOS of the setup in Fig.\ref{fig:MajoranaModels}(b) . Bold blue lines: Spin-$\up$ DOS. Thin red lines: Spin-$\dw$ DOS.
-}
-%
-\end{center}
-\end{figure}
-%-----------E N D  F I G U R E  4 ------
+
 
       % Thus, by activating the gate voltage in one of the dots it is possible to induce the majorana mode to leave to the other dot. 
 
@@ -459,29 +481,20 @@ To  improve the efficiency of the code we used the symmetries of the system to m
 % <<<<<<< HEA
 
     Another example of MZM manipulation occurs when the second dot is not directly connected to the lead. In this case, the inter-dot tunneling generates quantum interference which finally destroys the central peak as observe in FIG.\ref{fig:t1>0}(a) at the spin-$\up$ DOS . The spin-$\dw$ channel at FIG.\ref{fig:t1>0}(a), which is coupled to the MZM, does not exhibit the characteristic Fermi peak either. Instead, the one half Majorana signature at the Fermi energy $(\rho_\dw(0) = \frac{1}{2}\rho_\up(0))$ appears clearly inside the second dot FIG.\ref{fig:t1>0}(b). This situation prevails when the first dot's gate voltage is turned on FIG.\ref{fig:t1>0}(c)\&(d). While the first dot does not seem to exhibit any type of Majorana signature, the second dot's spin-$\dw$ DOS exhibits a robust zero-mode of height $\frac{0.5}{\pi \Gamma}$. The results are more exciting when the second dot's gate voltage is turned on in FIG.\ref{fig:t1>0}(e)\&(f). These figures clearly show how the MZM, previously localized at the second dot, is induced to leave this dot and returned onto the first dot. Moreover, the DOS of spin-$\up$ and spin-$\dw$ channels are very similar to the spectral densities observed at FIG.\ref{fig:t1=t2}(d)(e), which means that the previous interference pattern has disappeared due to the presence of this gate voltage. 
+
+    The results of the third configuration FIG.\ref{fig:MajoranaModels}(c) appear in FIG.\ref{fig:t2>0}. With the MZM is coupled only to the second dot, it is quite impressive that a Majorana signature of height $\frac{0.5}{\pi \Gamma}$ appears it the first dot since despite is no direct connection  between them. Contrary to what was observed in the previous case, this time the Majorana signature is not destroyed by the interference but instead, it emerges indirectly in the first dot. This is a perfect way to separate the Majorana the spin-$\up$ DOS from the central spin-$\up$ zero-mode which is still destroyed by the interference. In addition, the second dot still exhibits a Majorana signature as observed in FIG.\ref{fig:t2>0}(b). Turning on the gate voltage in dot $1$ destroys the Majorana signature in both dots FIG.\ref{fig:t2>0}(c)(d). However, if the gate voltage in dot $2$ is turned on, the Majorana mode will leave QD2 but the indirect majorana signature will prevail in QD1. 
+
+
+
+    On the other hand, if the Majorana mode is attached to the second dot in the previous arrangement, then both dots will exhibit a majorana signature. However, the signature in dot 1 is different from the others. The spin-$\dw$ DOS reveals the emergence of a zero mode with height close to $5.2$ (such that $\pi  \Gamma_1 \rho_\dw(0) = 0.5$). However the spin-$\up$ DOS remains equal to $0$. This new type of majorana signature is the result of an indirect connection between QD1 and the majorana mode attached t the second dot. As in the previous case, turning on the gate voltage in dot $1$ destroys the majorana signature in both dots. Instead, if the gate voltage in dot $2$ is turned on, both dots will preserve the Majorana signature. 
     
- %-----------F I G U R E  5 ------
-\begin{figure}[bt]
-\begin{center}
-\includegraphics[scale=0.48]{Graficos/t2>0.png}
-\caption{  \label{fig:t2>0} Non-interaction DOS of the set up in Fig.\ref{fig:MajoranaModels}(c) . Bold blue lines: Spin-$\up$ DOS. Thin red lines: Spin-$\dw$ DOS.. 
-}
-%
-\end{center}
-\end{figure}
-%-----------E N D  F I G U R E  5 ------
-    The results of the third configuration FIG.\ref{fig:MajoranaModels}(c) appear in FIG.\ref{fig:t2>0}. Here, the MZM is coupled only to the second dot, which makes quite impressive that a Majorana signature appears at the the first since there is no direct connection  with 
+    % To sum up we were able to distinguish two types of majorana signatures:
+    %  \begin{itemize}
+    %      \item \textbf{Type I: }  The spin-$\dw$ DOS is the half of the spin-$\up$ DOS  at the Fermi energy $(\rho_\dw(0)=\rho_\up(0))$. 
+    %      \item \textbf{Type II: } The spin-$\dw$ Fermi energy is equal about $5.2$. This is the value such that  $\pi  \Gamma_1 \rho_\dw(0) = 0.5$, characteristic of a decay of half a quanta in the conductivity. 
+    %  \end{itemize}
 
-
-
-    On the other hand, if the Majorana mode is attached to the second dot in the previous arrangement, then both dots will exhibit a majorana signature. However, the signature in dot 1 is different from the others. The spin-$\dw$ DOS reveals the emergence of a zero mode with height close to $5.2$ (such that $\pi  \Gamma_1 \rho_\dw(0) = 0.5$). However the spin-$\up$ DOS remains equal to $0$. This new type of majorana signature is the result of an indirect connection between QD1 and the majorana mode attached t the second dot. As in the previous case, turning on the gate voltage in dot $1$ destroys the majorana signature in both dots. However, if the gate voltage in dot $2$ is turned on, the Majorana mode will leave QD2 but the indirect majorana signature will prevail in QD1. 
-    
-    To sum up we were able to distinguish two types of majorana signatures:
-     \begin{itemize}
-         \item \textbf{Type I: }  The spin-$\dw$ DOS is the half of the spin-$\up$ DOS  at the Fermi energy $(\rho_\dw(0)=\rho_\up(0))$. 
-         \item \textbf{Type II: } The spin-$\dw$ Fermi energy is equal about $5.2$. This is the value such that  $\pi  \Gamma_1 \rho_\dw(0) = 0.5$, characteristic of a decay of half a quanta in the conductivity. 
-     \end{itemize}
-     The state of these signatures for each of these stated is depicted in FIG.\ref{fig:MajoranaModels}. A solid filled red circle inside the dot represents the appearance of a Type I Majorana signature, on the othere hand a dashed filled red circle represents the presence a  Type II Majorana signature. The obscure dashed circle represents a vanishing majorana signature due to an applied gate voltage or by quantum interference.
+    %  \noindent The state of these signatures for each of these stated is depicted in FIG.\ref{fig:MajoranaModels}. A solid filled red circle inside the dot represents the appearance of a Type I Majorana signature, on the othere hand a dashed filled red circle represents the presence a  Type II Majorana signature. The obscure dashed circle represents a vanishing majorana signature due to an applied gate voltage or by quantum interference.
 
  
     \subsection{Majorana manipulation in interacting dots}
@@ -498,7 +511,7 @@ To  improve the efficiency of the code we used the symmetries of the system to m
     
 
     
-    We consider a Coulomb repulsion energy of $U = 17\Gamma_1$ in both dots. The factor $ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2}$ in \eqref{eq:H_DQD} favors states with an odd number of electrons. In addition, particle-hole equilibrium is now achieved when $\left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}$. Any induced gate voltage must be considered as a shifting from this equilibrium point. In the case of symmetric coupling FIG\ref{fig:NRG_Majorana} shows the DOS in both QDs. The two peaks appearing at $8.6\Gamma_1 = \frac{U_i}{2}$ represent the two energy levels. The central spin-$\up$ peak is produced by the Kondo effect, \cite{hewson_kondo_1997,wilson_renormalization_1975}  while the two satellite peaks observed in the inset observed are the result of the  RKKY anti-ferromagnetic interaction between bott dots.  \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} The spin-$\dw$ DOS at the fermi energy  is exactly the half of the spin-$\up$ DOS as expected from a Type I majorana signature. Note, that in this case the majorana signature coexists with the Kondo effect in the DQD as already predicted by Ruiz-Tijerina \textit{et al.} for a single dot. \cite{ruiz-tijerina_interaction_2015}
+    Now we consider a Coulomb repulsion energy of $U = 17\Gamma_1$ in both dots. The factor $ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2}$ in \eqref{eq:H_DQD} favors states with an odd number of electrons. In addition, particle-hole equilibrium is now achieved when $\left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}$. Any induced gate voltage must be considered as a shifting from this equilibrium point. In the case of symmetric coupling FIG\ref{fig:NRG_Majorana} shows the DOS in both QDs. The two peaks appearing at $8.6\Gamma_1 = \frac{U_i}{2}$ represent the two energy levels. The central spin-$\up$ peak is produced by the Kondo effect, \cite{hewson_kondo_1997,wilson_renormalization_1975}  while the two satellite peaks observed in the inset observed are the result of the  RKKY anti-ferromagnetic interaction between bott dots.  \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} The spin-$\dw$ DOS at the fermi energy  is exactly the half of the spin-$\up$ DOS as expected from a Type I majorana signature. Note, that in this case the majorana signature coexists with the Kondo effect in the DQD as already predicted by Ruiz-Tijerina \textit{et al.} for a single dot. \cite{ruiz-tijerina_interaction_2015}
     
 
 
@@ -583,7 +596,9 @@ The authors thank Edson Vernek for enlightening discussions.  L.G.G.V.D.S. ackno
 
 %\bibliographystyle{unsrtnat}
 %\addcontentsline{toc}{section}{\textbf{References}}
-\bibliography{Majorana_DQD}
+\bibliography{Majorana_DQD.bib}
+
+
 
  \appendix
 

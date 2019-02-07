@@ -26,7 +26,7 @@ Control: production of eprint (0) enabled
 Warning--missing publisher in spielman_algorithms_2010
 You've used 28 entries,
             5847 wiz_defined-function locations,
-            1828 strings with 21785 characters,
+            1828 strings with 21789 characters,
 and the built_in function-call counts, 28087 in all, are:
 = -- 1669
 > -- 820
