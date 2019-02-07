@@ -588,27 +588,27 @@ The authors thank Edson Vernek for enlightening discussions.  L.G.G.V.D.S. ackno
 
  
  \section{Computation of the Green Function \label{sec:Appendix_alg}}
- In Zubarev's fermionic ballistic transport approach \cite{zubarev_double-time_1960} the green functions associated to two operators $A(t)$ , $B(t)$ is defined as that Fourier transform of the time-ordered anti-commutator of $A$ and $B$
+ In Zubarev's fermionic ballistic transport approach \cite{zubarev_double-time_1960} the green function associated to two operators $A(t)$ , $B(t)$ is defined as that Fourier transform of the time-ordered anti-commutator of $A$ and $B$
 \begin{equation}
   \Green{A,B}= \mathcal{F}\left\{ \mathcal{T}\left[\left\{ A(t),B(t')\right\} \right]\right\} \left(\omega\right).
   \label{eq:greenFunction}
 \end{equation}
 
-The Fourier transform of Schrodinger evolution determines the transport equations 
+The Fourier transform of Schrodinger evolution leads to the the transport equations 
 \begin{equation}
     \omega\Green{A,B}=\delta_{A^{\dagger},B}+\Green{\left[A,H\right],B}.
     \label{eq:Transport}
 \end{equation}
-\noindent We can apply this to Hamiltonian \eqref{eq:Model} by replacing $A$ and $B$ by the creation and annihilation operators. To simplify the complexity of the system we fix $B = d^\dagger_{1\dw}$. In addition note that the transport equations for $f_\dw$ and $f^\dagger_\dw$ are 
+\noindent Applying this expression to Hamiltonian \eqref{eq:Model} replacing $A$ and $B$ by the creation and annihilation operators $d\dagger_i, f^\dagger, d_i,f ,c_k,c\dagger_k$ we obtain a linear transport system. To simplify the complexity of the equations we fix $B = d^\dagger_{1\dw}$. In addition note that if we replace $A$ by $f_\dw$ and $f^\dagger_\dw$ \ref{eq:Transport} becomes
 \begin{align}
         \left(\omega-\epsilon_{M}\right)\Green{f_{\downarrow},d_{1\downarrow}^{\dagger}}&=\frac{t}{\sqrt{2}}\left(\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}-\Green{d_{1\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}\right) \\
-    \left(\omega+\epsilon_{M}\right)\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}&=\frac{t}{\sqrt{2}}\left(\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}-\Green{d_{1\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}\right),
+    \left(\omega+\epsilon_{M}\right)\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}&=\frac{t}{\sqrt{2}}\left(\Green{d_{1\downarrow},d_{1\downarrow}^{\dagger}}-\Green{d_{1\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}}\right).
 \end{align}
-\noindent which allows us to take $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} = \frac{\omega + \epsilon}{\omega -\epsilon}\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $. Therefore, we can eliminate $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $ from the equations even before we start Gauss-Jordan process.
+\noindent This allows us to take $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} = \frac{\omega + \epsilon}{\omega -\epsilon}\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $. Hence, we can eliminate $\Green{f_{\downarrow}^{\dagger},d_{1\downarrow}^{\dagger}} $ from the equations even before we start Gauss-Jordan process.
 
-Writing the other equations  we obtain the  linear system
+Writing the other equations  we obtain the  linear system of the form
 \begin{equation}
-    \mathcal{T} \vec{G}_{d^\dagger_1} = \hat{e_1}
+    \mathcal{T} \vec{G}_{d^\dagger_1} = \hat{e_1},
 \end{equation}
 
 \noindent where $\mathcal{T}$ is the transport matrix 
