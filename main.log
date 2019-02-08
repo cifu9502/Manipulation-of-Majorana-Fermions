@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.2.7)  7 FEB 2019 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.2.7)  8 FEB 2019 01:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,9 +705,6 @@ LaTeX Warning: Label `eq:epDQD' multiply defined.
 
 LaTeX Warning: Label `eq:T+-' multiply defined.
 
-
-LaTeX Warning: Label `eq:M2' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -874,7 +871,7 @@ Overfull \hbox (2.46196pt too wide) in paragraph at lines 452--453
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
  on input line 468.
 
-(./main.bbl [6 <./Graficos/b)Nt1>0.png> <./Graficos/b)Nt2>0.png>]
+[6 <./Graficos/b)Nt1>0.png> <./Graficos/b)Nt2>0.png>] (./main.bbl
 
 ! Package babel Error: You haven't defined the language en yet.
 
@@ -918,32 +915,28 @@ Underfull \hbox (badness 1033) in paragraph at lines 307--314
  []
 
 )
-Overfull \hbox (12.15707pt too wide) detected at line 534
+Overfull \hbox (12.15707pt too wide) detected at line 544
 [] [] \OML/cmm/m/it/10 ;
  []
 
-<Graficos/Graph_DQD-Pro.png, id=296, 922.94812pt x 752.0597pt>
+[7]
+<Graficos/Graph_DQD-Pro.png, id=321, 937.25156pt x 752.0597pt>
 File: Graficos/Graph_DQD-Pro.png Graphic file (type png)
 <use Graficos/Graph_DQD-Pro.png>
-Package pdftex.def Info: Graficos/Graph_DQD-Pro.png  used on input line 553.
-(pdftex.def)             Requested size: 230.73647pt x 188.01447pt.
-[7]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 575.
-
-<Graficos/Graphs-DQD-M-Pro.png, id=325, 849.92531pt x 702.37407pt>
+Package pdftex.def Info: Graficos/Graph_DQD-Pro.png  used on input line 563.
+(pdftex.def)             Requested size: 234.31232pt x 188.01447pt.
+<Graficos/Graphs-DQD-M-Pro.png, id=326, 837.1275pt x 672.26157pt>
 File: Graficos/Graphs-DQD-M-Pro.png Graphic file (type png)
 <use Graficos/Graphs-DQD-M-Pro.png>
-Package pdftex.def Info: Graficos/Graphs-DQD-M-Pro.png  used on input line 591.
+Package pdftex.def Info: Graficos/Graphs-DQD-M-Pro.png  used on input line 601.
 
-(pdftex.def)             Requested size: 246.47203pt x 203.68326pt.
-[8 <./Graficos/Graph_DQD-Pro.png> <./Graficos/Graphs-DQD-M-Pro.png>] [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 686.
-
-(./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 686.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 686.
+(pdftex.def)             Requested size: 242.76076pt x 194.95085pt.
+ [8 <./Graficos/Graph_DQD-Pro.png> <./Graficos/Graphs-DQD-M-Pro.png>]
+[9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 696.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 696.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 696.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D2726AEBFEE16A6004C71556703B5CA0;1115.
 
@@ -953,12 +946,12 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  19520 strings out of 494485
- 355769 string characters out of 6175793
- 450419 words of memory out of 5000000
+ 355774 string characters out of 6175793
+ 445446 words of memory out of 5000000
  22739 multiletter control sequences out of 15000+600000
  15404 words of font info for 56 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 55i,15n,48p,1413b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,48p,1413b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texli
@@ -981,10 +974,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti9.pfb>
-Output written on main.pdf (9 pages, 1368270 bytes).
+Output written on main.pdf (9 pages, 1367842 bytes).
 PDF statistics:
- 454 PDF objects out of 1000 (max. 8388607)
- 386 compressed objects within 4 object streams
+ 457 PDF objects out of 1000 (max. 8388607)
+ 389 compressed objects within 4 object streams
  95 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 
