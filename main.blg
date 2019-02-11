@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: apsrev4-1.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -10,7 +10,12 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: mainNotes.bib
-Database file #2: Majorana_DQD.bib
+Database file #2: Majorana_DQD.bib.bib
+I was expecting a `,' or a `}'---line 55 of file Majorana_DQD.bib.bib
+ : 
+ : @article{beenakker_search_2013,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 control{REVTEX41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
 control{apsrev41Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{}, control.pages{0}, control.year{1}, control.eprint{N/A}, 
 Warning--jnrlst (dependency: not reversed) set 1
@@ -24,45 +29,45 @@ Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
 Warning--missing publisher in spielman_algorithms_2010
-You've used 35 entries,
+You've used 37 entries,
             5847 wiz_defined-function locations,
-            1886 strings with 24065 characters,
-and the built_in function-call counts, 37003 in all, are:
-= -- 2142
-> -- 1145
-< -- 282
-+ -- 363
-- -- 303
-* -- 5990
-:= -- 3513
-add.period$ -- 33
-call.type$ -- 35
-change.case$ -- 137
-chr.to.int$ -- 43
-cite$ -- 36
-duplicate$ -- 3445
-empty$ -- 2663
-format.name$ -- 651
-if$ -- 7350
+            1901 strings with 24400 characters,
+and the built_in function-call counts, 38710 in all, are:
+= -- 2271
+> -- 1174
+< -- 293
++ -- 373
+- -- 309
+* -- 6224
+:= -- 3694
+add.period$ -- 35
+call.type$ -- 37
+change.case$ -- 145
+chr.to.int$ -- 45
+cite$ -- 38
+duplicate$ -- 3600
+empty$ -- 2795
+format.name$ -- 669
+if$ -- 7695
 int.to.chr$ -- 1
-int.to.str$ -- 42
-missing$ -- 459
-newline$ -- 151
-num.names$ -- 99
-pop$ -- 1373
+int.to.str$ -- 44
+missing$ -- 480
+newline$ -- 157
+num.names$ -- 105
+pop$ -- 1438
 preamble$ -- 1
-purify$ -- 165
+purify$ -- 175
 quote$ -- 0
-skip$ -- 1287
+skip$ -- 1362
 stack$ -- 0
-substring$ -- 817
-swap$ -- 3385
-text.length$ -- 142
+substring$ -- 884
+swap$ -- 3524
+text.length$ -- 145
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 515
+type$ -- 540
 warning$ -- 2
-while$ -- 103
+while$ -- 109
 width$ -- 0
-write$ -- 320
-(There were 2 warnings)
+write$ -- 336
+(There was 1 error message)

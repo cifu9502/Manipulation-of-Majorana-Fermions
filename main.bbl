@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{33}%
+\begin{thebibliography}{35}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -284,6 +284,17 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Physical Review B}\ }\textbf
   {\bibinfo {volume} {91}},\ \bibinfo {pages} {115435} (\bibinfo {year}
   {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Górski}\ \emph {et~al.}(2018)\citenamefont
+  {Górski}, \citenamefont {Barański}, \citenamefont {Weymann},\ and\
+  \citenamefont {Domański}}]{gorski_interplay_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Górski}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Barański}},
+  \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Weymann}}, \ and\
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Domański}},\ }\href
+  {\doibase 10.1038/s41598-018-33529-1} {\bibfield  {journal} {\bibinfo
+  {journal} {Scientific Reports}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo
+  {pages} {15717} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Barkeshli}\ and\ \citenamefont
   {Sau}(2015)}]{barkeshli_physical_2015}%
   \BibitemOpen
@@ -315,6 +326,22 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Physical Review B}\ }\textbf
   {\bibinfo {volume} {95}},\ \bibinfo {pages} {235305} (\bibinfo {year}
   {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Silva}\ and\ \citenamefont
+  {Vernek}(2016)}]{silva_andreev_2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~F.}\ \bibnamefont
+  {Silva}}\ and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Vernek}},\
+  }\href {\doibase 10.1088/0953-8984/28/43/435702} {\bibfield  {journal}
+  {\bibinfo  {journal} {Journal of Physics: Condensed Matter}\ }\textbf
+  {\bibinfo {volume} {28}},\ \bibinfo {pages} {435702} (\bibinfo {year}
+  {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ivanov}(2017)}]{ivanov_coherent_2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~I.}\ \bibnamefont
+  {Ivanov}},\ }\href {\doibase 10.1103/PhysRevB.96.035417} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Review B}\ }\textbf {\bibinfo
+  {volume} {96}},\ \bibinfo {pages} {035417} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Su}\ \emph {et~al.}(2017)\citenamefont {Su},
   \citenamefont {Tacla}, \citenamefont {Hocevar}, \citenamefont {Car},
   \citenamefont {Plissard}, \citenamefont {Bakkers}, \citenamefont {Daley},
@@ -332,6 +359,13 @@
   10.1038/s41467-017-00665-7} {\bibfield  {journal} {\bibinfo  {journal}
   {Nature Communications}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo {pages}
   {585} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hewson}(1997)}]{hewson_kondo_1997}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~C.}\ \bibnamefont
+  {Hewson}},\ }\href@noop {} {{\selectlanguage {en}\emph {\bibinfo {title} {The
+  Kondo Problem to Heavy Fermions}}}}\ (\bibinfo  {publisher} {Cambridge
+  University Press},\ \bibinfo {year} {1997})\ \bibinfo {note}
+  {google-Books-ID: fPzgHneNFDAC}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Ruderman}\ and\ \citenamefont
   {Kittel}(1954)}]{ruderman_indirect_1954}%
   \BibitemOpen
@@ -353,19 +387,6 @@
   {Yosida}},\ }\href {\doibase 10.1103/PhysRev.106.893} {\bibfield  {journal}
   {\bibinfo  {journal} {Physical Review}\ }\textbf {\bibinfo {volume} {106}},\
   \bibinfo {pages} {893} (\bibinfo {year} {1957})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Dias~da Silva}\ \emph {et~al.}(2008)\citenamefont
-  {Dias~da Silva}, \citenamefont {Sandler}, \citenamefont {Ingersent},\ and\
-  \citenamefont {Ulloa}}]{dias_da_silva_transmission_2008}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~G. G.~V.}\
-  \bibnamefont {Dias~da Silva}}, \bibinfo {author} {\bibfnamefont
-  {N.}~\bibnamefont {Sandler}}, \bibinfo {author} {\bibfnamefont
-  {K.}~\bibnamefont {Ingersent}}, \ and\ \bibinfo {author} {\bibfnamefont
-  {S.~E.}\ \bibnamefont {Ulloa}},\ }\href {\doibase
-  10.1016/j.physe.2007.08.098} {\bibfield  {journal} {\bibinfo  {journal}
-  {Physica E: Low-dimensional Systems and Nanostructures}\ }\textbf {\bibinfo
-  {volume} {40}},\ \bibinfo {pages} {1002} (\bibinfo {year}
-  {2008})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Zubarev}(1960)}]{zubarev_double-time_1960}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~N.}\ \bibnamefont
@@ -373,6 +394,16 @@
   {journal} {\bibinfo  {journal} {Soviet Physics Uspekhi}\ }\textbf {\bibinfo
   {volume} {3}},\ \bibinfo {pages} {320} (\bibinfo {year} {1960})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Bulla}\ \emph {et~al.}(2008)\citenamefont {Bulla},
+  \citenamefont {Costi},\ and\ \citenamefont
+  {Pruschke}}]{bulla_numerical_2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Bulla}}, \bibinfo {author} {\bibfnamefont {T.~A.}\ \bibnamefont {Costi}}, \
+  and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Pruschke}},\ }\href
+  {\doibase 10.1103/RevModPhys.80.395} {\bibfield  {journal} {\bibinfo
+  {journal} {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume} {80}},\
+  \bibinfo {pages} {395} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Spielman}(2010)}]{spielman_algorithms_2010}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~A.}\ \bibnamefont
@@ -396,16 +427,6 @@
   {Limit}}},\ \href {https://edoc.ub.uni-muenchen.de/3115/} {\bibinfo {type}
   {Text.{PhDThesis}}},\ \bibinfo  {school} {Ludwig-Maximilians-Universität
   München} (\bibinfo {year} {2005})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Bulla}\ \emph {et~al.}(2008)\citenamefont {Bulla},
-  \citenamefont {Costi},\ and\ \citenamefont
-  {Pruschke}}]{bulla_numerical_2008}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Bulla}}, \bibinfo {author} {\bibfnamefont {T.~A.}\ \bibnamefont {Costi}}, \
-  and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Pruschke}},\ }\href
-  {\doibase 10.1103/RevModPhys.80.395} {\bibfield  {journal} {\bibinfo
-  {journal} {Reviews of Modern Physics}\ }\textbf {\bibinfo {volume} {80}},\
-  \bibinfo {pages} {395} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Hofstetter}(2000)}]{hofstetter_generalized_2000}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
@@ -422,11 +443,4 @@
   {journal} {\bibinfo  {journal} {Physical Review B}\ }\textbf {\bibinfo
   {volume} {49}},\ \bibinfo {pages} {11986} (\bibinfo {year}
   {1994})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Hewson}(1997)}]{hewson_kondo_1997}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~C.}\ \bibnamefont
-  {Hewson}},\ }\href@noop {} {{\selectlanguage {en}\emph {\bibinfo {title} {The
-  Kondo Problem to Heavy Fermions}}}}\ (\bibinfo  {publisher} {Cambridge
-  University Press},\ \bibinfo {year} {1997})\ \bibinfo {note}
-  {google-Books-ID: fPzgHneNFDAC}\BibitemShut {NoStop}%
 \end{thebibliography}%
