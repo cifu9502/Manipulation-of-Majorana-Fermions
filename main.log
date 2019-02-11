@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.2.7)  8 FEB 2019 01:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.2.7)  11 FEB 2019 01:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -762,116 +762,131 @@ LaTeX Info: Redefining \nameref on input line 28.
 Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 28.
 \openout3 = `mainNotes.bib'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 92.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 92.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<Graficos/GenModel.png, id=123, 543.4704pt x 390.9807pt>
+<Graficos/GenModel.png, id=129, 543.4704pt x 390.9807pt>
 File: Graficos/GenModel.png Graphic file (type png)
 <use Graficos/GenModel.png>
-Package pdftex.def Info: Graficos/GenModel.png  used on input line 218.
+Package pdftex.def Info: Graficos/GenModel.png  used on input line 297.
 (pdftex.def)             Requested size: 217.3843pt x 156.3895pt.
 
-Overfull \hbox (5.50017pt too wide) detected at line 233
+Overfull \hbox (5.50017pt too wide) detected at line 312
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--244
+Underfull \hbox (badness 10000) in paragraph at lines 318--323
 
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 274--275
+Underfull \hbox (badness 3579) in paragraph at lines 353--354
 \OT1/cmr/m/n/10 de-rived an ex-act ex-pres-sion for the Green func-
  []
 
 
-Underfull \hbox (badness 5105) in paragraph at lines 274--275
+Underfull \hbox (badness 5105) in paragraph at lines 353--354
 \OT1/cmr/m/n/10 tions as-so-ci-ated to both quan-tum dot op-er-a-tors
  []
 
 [2 <./Graficos/GenModel.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 323.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 402.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 323.
-<Graficos/MajoranaModels.png, id=163, 479.391pt x 180.675pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 402.
+<Graficos/MajoranaModels.png, id=166, 479.391pt x 180.675pt>
 File: Graficos/MajoranaModels.png Graphic file (type png)
 <use Graficos/MajoranaModels.png>
-Package pdftex.def Info: Graficos/MajoranaModels.png  used on input line 348.
+Package pdftex.def Info: Graficos/MajoranaModels.png  used on input line 427.
 (pdftex.def)             Requested size: 239.69492pt x 90.33727pt.
-<Graficos/t1=t2.png, id=164, 491.436pt x 491.436pt>
+<Graficos/t1=t2.png, id=167, 491.436pt x 491.436pt>
 File: Graficos/t1=t2.png Graphic file (type png)
 <use Graficos/t1=t2.png>
-Package pdftex.def Info: Graficos/t1=t2.png  used on input line 359.
+Package pdftex.def Info: Graficos/t1=t2.png  used on input line 438.
 (pdftex.def)             Requested size: 235.8866pt x 235.8866pt.
  [3 <./Graficos/MajoranaModels.png>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 369.
+ on input line 448.
 
-<Graficos/t1>0.png, id=184, 491.436pt x 491.436pt>
+<Graficos/t1>0.png, id=187, 491.436pt x 491.436pt>
 File: Graficos/t1>0.png Graphic file (type png)
 <use Graficos/t1>0.png>
-Package pdftex.def Info: Graficos/t1>0.png  used on input line 377.
+Package pdftex.def Info: Graficos/t1>0.png  used on input line 456.
 (pdftex.def)             Requested size: 235.8866pt x 235.8866pt.
-<Graficos/t2>0.png, id=191, 503.7219pt x 491.436pt>
+<Graficos/t2>0.png, id=194, 503.7219pt x 491.436pt>
 File: Graficos/t2>0.png Graphic file (type png)
 <use Graficos/t2>0.png>
-Package pdftex.def Info: Graficos/t2>0.png  used on input line 392.
+Package pdftex.def Info: Graficos/t2>0.png  used on input line 471.
 (pdftex.def)             Requested size: 241.78375pt x 235.8866pt.
 [4 <./Graficos/t1=t2.png> <./Graficos/t1>0.png>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 406.
+ on input line 485.
 
-<Graficos/NRG-t1=t2.png, id=218, 607.7907pt x 390.9807pt>
+<Graficos/NRG-t1=t2.png, id=221, 607.7907pt x 390.9807pt>
 File: Graficos/NRG-t1=t2.png Graphic file (type png)
 <use Graficos/NRG-t1=t2.png>
-Package pdftex.def Info: Graficos/NRG-t1=t2.png  used on input line 417.
+Package pdftex.def Info: Graficos/NRG-t1=t2.png  used on input line 496.
 (pdftex.def)             Requested size: 243.11197pt x 156.3895pt.
-<Graficos/Nt1=t2.png, id=219, 555.0336pt x 469.755pt>
+<Graficos/Nt1=t2.png, id=222, 555.0336pt x 469.755pt>
 File: Graficos/Nt1=t2.png Graphic file (type png)
 <use Graficos/Nt1=t2.png>
-Package pdftex.def Info: Graficos/Nt1=t2.png  used on input line 429.
+Package pdftex.def Info: Graficos/Nt1=t2.png  used on input line 508.
 (pdftex.def)             Requested size: 249.7628pt x 211.3878pt.
 
-Overfull \hbox (3.7628pt too wide) in paragraph at lines 429--430
+Overfull \hbox (3.7628pt too wide) in paragraph at lines 508--509
  [] 
  []
 
-<Graficos/b)Nt1>0.png, id=222, 542.025pt x 469.755pt>
+<Graficos/b)Nt1>0.png, id=225, 542.025pt x 469.755pt>
 File: Graficos/b)Nt1>0.png Graphic file (type png)
 <use Graficos/b)Nt1>0.png>
-Package pdftex.def Info: Graficos/b)Nt1>0.png  used on input line 441.
+Package pdftex.def Info: Graficos/b)Nt1>0.png  used on input line 520.
 (pdftex.def)             Requested size: 243.90898pt x 211.3878pt.
-<Graficos/b)Nt2>0.png, id=225, 552.1428pt x 469.755pt>
+<Graficos/b)Nt2>0.png, id=228, 552.1428pt x 469.755pt>
 File: Graficos/b)Nt2>0.png Graphic file (type png)
 <use Graficos/b)Nt2>0.png>
-Package pdftex.def Info: Graficos/b)Nt2>0.png  used on input line 452.
+Package pdftex.def Info: Graficos/b)Nt2>0.png  used on input line 531.
 (pdftex.def)             Requested size: 248.46196pt x 211.3878pt.
 
-Overfull \hbox (2.46196pt too wide) in paragraph at lines 452--453
+Overfull \hbox (2.46196pt too wide) in paragraph at lines 531--532
  [] 
  []
 
 [5 <./Graficos/t2>0.png> <./Graficos/NRG-t1=t2.png> <./Graficos/Nt1=t2.png>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 468.
+ on input line 547.
 
 [6 <./Graficos/b)Nt1>0.png> <./Graficos/b)Nt2>0.png>] (./main.bbl
+Underfull \hbox (badness 1824) in paragraph at lines 63--67
+ []\OT1/cmr/m/n/9 C. Beenakker, [][]An-nual Re-view of Con-densed Mat-ter
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 377--384
+ []\OT1/cmr/m/n/9 M. Sin-del, \OT1/cmr/m/it/9 Nu-mer-i-cal Renor-mal-iza-tion G
+roup stud-ies
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 377--384
+ \OT1/cmr/m/it/9 of Quan-tum Im-pu-rity Mod-els in the Strong Cou-pling
+ []
+
 
 ! Package babel Error: You haven't defined the language en yet.
 
@@ -879,7 +894,7 @@ See the babel package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.193   Kondo Problem to Heavy Fermions}}}}
+l.412   Kondo Problem to Heavy Fermions}}}}
                                            \ (\bibinfo  {publisher} {Cambridge
 Your command will be ignored, type <return> to proceed
 
@@ -894,64 +909,52 @@ See the babel package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.193   Kondo Problem to Heavy Fermions}}}}
+l.412   Kondo Problem to Heavy Fermions}}}}
                                            \ (\bibinfo  {publisher} {Cambridge
 You may proceed, but expect wrong results
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 192--196
+Underfull \hbox (badness 2351) in paragraph at lines 411--415
  \OT1/cmr/m/n/9 (Cam-bridge Uni-ver-sity Press, 1997) google-Books-ID:
  []
 
-
-Underfull \hbox (badness 2050) in paragraph at lines 307--314
- []\OT1/cmr/m/n/9 M. Sin-del, \OT1/cmr/m/it/9 Nu-mer-i-cal Renor-mal-iza-tion G
-roup stud-ies
- []
-
-
-Underfull \hbox (badness 1033) in paragraph at lines 307--314
- \OT1/cmr/m/it/9 of Quan-tum Im-pu-rity Mod-els in the Strong Cou-pling
- []
-
-)
-Overfull \hbox (12.15707pt too wide) detected at line 544
+) [7]
+Overfull \hbox (12.15707pt too wide) detected at line 623
 [] [] \OML/cmm/m/it/10 ;
  []
 
-[7]
-<Graficos/Graph_DQD-Pro.png, id=322, 937.25156pt x 752.0597pt>
+<Graficos/Graph_DQD-Pro.png, id=338, 937.25156pt x 752.0597pt>
 File: Graficos/Graph_DQD-Pro.png Graphic file (type png)
 <use Graficos/Graph_DQD-Pro.png>
-Package pdftex.def Info: Graficos/Graph_DQD-Pro.png  used on input line 563.
+Package pdftex.def Info: Graficos/Graph_DQD-Pro.png  used on input line 642.
 (pdftex.def)             Requested size: 234.31232pt x 188.01447pt.
-<Graficos/Graphs-DQD-M-Pro.png, id=327, 837.1275pt x 672.26157pt>
+<Graficos/Graphs-DQD-M-Pro.png, id=343, 837.1275pt x 672.26157pt>
 File: Graficos/Graphs-DQD-M-Pro.png Graphic file (type png)
 <use Graficos/Graphs-DQD-M-Pro.png>
-Package pdftex.def Info: Graficos/Graphs-DQD-M-Pro.png  used on input line 601.
+Package pdftex.def Info: Graficos/Graphs-DQD-M-Pro.png  used on input line 680.
 
 (pdftex.def)             Requested size: 242.76076pt x 194.95085pt.
- [8 <./Graficos/Graph_DQD-Pro.png> <./Graficos/Graphs-DQD-M-Pro.png>]
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 696.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 696.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 696.
+[8 <./Graficos/Graph_DQD-Pro.png> <./Graficos/Graphs-DQD-M-Pro.png>] [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 775.
+
+(./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 775.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 775.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4952CC2EFE29E2AAFA678667BB475F01;1119.
+(rerunfilecheck)             Checksum: 295A17D0DFB73326E59759651CB09C07;1119.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19521 strings out of 494485
- 355785 string characters out of 6175793
- 448446 words of memory out of 5000000
- 22740 multiletter control sequences out of 15000+600000
+ 19545 strings out of 494485
+ 356471 string characters out of 6175793
+ 442703 words of memory out of 5000000
+ 22758 multiletter control sequences out of 15000+600000
  15404 words of font info for 56 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 55i,15n,48p,1413b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,48p,1401b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texli
@@ -974,10 +977,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti9.pfb>
-Output written on main.pdf (9 pages, 1367967 bytes).
+Output written on main.pdf (9 pages, 1368962 bytes).
 PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
- 389 compressed objects within 4 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 477 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 101 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 
