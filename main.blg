@@ -24,45 +24,45 @@ Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
 Warning--missing publisher in spielman_algorithms_2010
-You've used 34 entries,
+You've used 35 entries,
             5847 wiz_defined-function locations,
-            1878 strings with 23693 characters,
-and the built_in function-call counts, 35448 in all, are:
-= -- 2072
-> -- 1077
-< -- 270
-+ -- 343
-- -- 285
-* -- 5705
-:= -- 3381
-add.period$ -- 32
-call.type$ -- 34
-change.case$ -- 133
-chr.to.int$ -- 42
-cite$ -- 35
-duplicate$ -- 3306
-empty$ -- 2555
-format.name$ -- 612
-if$ -- 7036
+            1886 strings with 24065 characters,
+and the built_in function-call counts, 37003 in all, are:
+= -- 2142
+> -- 1145
+< -- 282
++ -- 363
+- -- 303
+* -- 5990
+:= -- 3513
+add.period$ -- 33
+call.type$ -- 35
+change.case$ -- 137
+chr.to.int$ -- 43
+cite$ -- 36
+duplicate$ -- 3445
+empty$ -- 2663
+format.name$ -- 651
+if$ -- 7350
 int.to.chr$ -- 1
-int.to.str$ -- 41
-missing$ -- 441
-newline$ -- 148
-num.names$ -- 96
-pop$ -- 1324
+int.to.str$ -- 42
+missing$ -- 459
+newline$ -- 151
+num.names$ -- 99
+pop$ -- 1373
 preamble$ -- 1
-purify$ -- 160
+purify$ -- 165
 quote$ -- 0
-skip$ -- 1240
+skip$ -- 1287
 stack$ -- 0
-substring$ -- 794
-swap$ -- 3232
-text.length$ -- 133
+substring$ -- 817
+swap$ -- 3385
+text.length$ -- 142
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 495
+type$ -- 515
 warning$ -- 2
-while$ -- 100
+while$ -- 103
 width$ -- 0
-write$ -- 312
+write$ -- 320
 (There were 2 warnings)
