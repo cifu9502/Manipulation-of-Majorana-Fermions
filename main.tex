@@ -76,7 +76,7 @@ C.P.\ 66318, 05315--970 S\~{a}o Paulo, SP, Brazil}
 \LUIS{We'll call them Majorana ``zero modes" instead of ``Majorana fermions", which relates more to elementary particles. }
 \Jesus{Ok ;) }
 
-Majorana zero modes (MZMs) appearing at the edges of topological superconducting wires are a promising platform for fault-tolerant quantum computation. Novel proposals use MZMs tunneling inside quantum dots (QDs) to implement quantum architectures because today’s precise experimental control over the QD parameters offers the unique possibility of manipulating the Majoranas inside multi-dot systems. The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). So far, no complete analysis of this basic structure has been done. This  project fills this gap with an analytical and numerical quantum transport study of the effects of coupling a Majorana mode with a DQD in the non-interacting and interacting regimes. By tuning the model parameters we show that it is possible to control the  the Majorana signature inside the DQD. 
+Majorana zero modes (MZMs) appearing at the edges of topological superconducting wires are a promising platform for fault-tolerant quantum computation. Novel proposals use MZMs tunneling inside quantum dots (QDs) to implement quantum architectures because today’s precise experimental control over the QD parameters offers the unique possibility of manipulating the Majoranas inside multi-dot systems. The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). This model shows several possibilities for manipulation of MZM, including different geometric couplings such as linear forms of T-junctions. In this model we perform analytical (non-interacting) and numerical(interacting) quantum transport studies of the transition of the Majorana signature. By tuning the model parameters we show that it is possible to control the localization of the MZM inside the DQD. 
 
 
 
@@ -129,7 +129,7 @@ One of the most promising methods to detect MZMs consists in attaching a quantum
 \TS{Here's what we did: quantum tunneling of a MZM into a double dot shows several possibilities for manipulation of MZM}
 
 
- The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). Tunneling Majorana modes in these basic structures have inspired theoretical studies \cite{silva_andreev_2016,ivanov_coherent_2017} and experimental setups confirming the observations of Andreev molecules \cite{su_andreev_2017}. Though quantum tunneling of a MZM into a double dot shows several possibilities for manipulation of MZM,  there is still no complete analysis of the transitions of the Majorana signatures between the QDs in this model. In this paper we fill this gap by performing a transport study of a DQD coupled to a MZM and a metallic lead FIG.\ref{fig:GenModel}). The simplicity of this model allows us to explore analytically different geometries of QD's from linear couplings to T-junctions (FIG.\ref{fig:MajoranaModels}). We considered both non-interacting and interacting regimes, observing major agreement between both approaches about the location of the Majorana signature. While the non-interacting regime is suitable to obtain exact expressions for the Green function, the interacting case  shows how the Majorana signature co-exists with strongly correlated phenomena such as the Kondo effect \cite{hewson_kondo_1997} and RKKY interactions.   \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} 
+ The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). Tunneling Majorana modes in these basic structures have inspired theoretical studies \cite{silva_andreev_2016,ivanov_coherent_2017} and experimental setups confirming the observations of Andreev molecules \cite{su_andreev_2017}. Even though quantum tunneling of a MZM into a double dot shows several possibilities for manipulation of MZM,  there is still no complete analysis of the transitions of the Majorana signatures between the QDs in this model. In this paper we fill this gap by performing a transport study of a DQD coupled to a MZM and a metallic lead FIG.\ref{fig:GenModel}). The simplicity of this model allows us to explore analytically different geometries of QD's from linear couplings to T-junctions (FIG.\ref{fig:MajoranaModels}). We considered both non-interacting and interacting regimes, observing major agreement between both approaches about the location of the Majorana signature. While the non-interacting regime is suitable to obtain exact expressions for the Green function, the interacting case  shows how the Majorana signature co-exists with strongly correlated phenomena such as the Kondo effect \cite{hewson_kondo_1997} and RKKY interactions.   \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} 
 
 This paper is organized as follows. In \ref{sec:modelmethods} we describe our model of a DQD coupled to a MZM and a metalic lead . This model is studied through the ballistic transport \cite{zubarev_double-time_1960} approach (non-interacting) in \ref{sec:non-interactingMethods} and the numerical renormalization group (NRG)\cite{bulla_numerical_2008} in the interacting case \ref{sec:NRG-interacting}. The results are presented in section \ref{sec:results} where we compare the non-interacting density of states (DOS) \ref{subsect:non-int} with the low-energy  interacting results \ref{subsec:Interacting}. 
 
@@ -529,17 +529,6 @@ We call MZM manipulation to the "movements" attributed to the Majorana signature
 \end{figure}
 %-----------E N D  F I G U R E  4 ------
 
-  %-----------F I G U R E  5 ------
-\begin{figure}[bt]
-\begin{center}
-\includegraphics[scale=0.45]{Graficos/b)Nt2>0.png}
-\caption{  \label{fig:Nt2>0} The same as in FIG.\ref{fig:t1=t2} for the interacting DOS of the set up in Fig.\ref{fig:MajoranaModels}(c) . Inset in b): Low-energy DOS. 
-}
-%
-
-\end{center}
-\end{figure}
-%-----------E N D  F I G U R E  5 ------
 
 
 
@@ -552,6 +541,18 @@ We call MZM manipulation to the "movements" attributed to the Majorana signature
     %Poisoning.
 
     In the second setup FIG.\ref{fig:MajoranaModels}(b), the NRG results in  FIG.\ref{fig:Nt1>0} exhibit Majorana signatures similar to the non-interacting case. In the first row, the Majorana signature is destroyed by quantum interference while the second dot presents a type I Majorana signature as can be observed in the inset of the second dot. The first difference occurs when the gate voltage is switch on the first dot. This time the Majorana mode jumps onto the first dot which presents a type I Majorana signature . If the voltages is switched on the second dot, a type 2 Majorana signature appears a very low energies in dot 1. 
+    
+  %-----------F I G U R E  5 ------
+\begin{figure}[bt]
+\begin{center}
+\includegraphics[scale=0.45]{Graficos/b)Nt2>0.png}
+\caption{  \label{fig:Nt2>0} The same as in FIG.\ref{fig:t1=t2} for the interacting DOS of the set up in Fig.\ref{fig:MajoranaModels}(c) . Inset in b): Low-energy DOS. 
+}
+%
+
+\end{center}
+\end{figure}
+%-----------E N D  F I G U R E  5 ------
 
     Finally, FIG.\ref{fig:Nt2>0} show the NRG results for the last configuration FIG.\ref{fig:MajoranaModels}(c). Surprisingly, the indirectly attached MZM exhibits a robust type II Majorana signature in the first dot over a destroyed Kondo peak. This signature is stable under the gate voltage tuning. In addition, only the first in the particle hole symmetric case the second dot presents a type II Majorana signature (Inset FIG.\ref{fig:Nt2>0}(b)). The difference between this model and the other that leads to a stable signature in one of the dots occurs because the QD's in the (c) model are connected in series. Therefore, the Majorana mode will always prevail in the dot that is attached to the leads besides the application of gate voltages. This case is similar to the model of a single dot attached to a Majorana chain, where it is known that the Majorana signatures is not disturbed by the gate tuning. 
 %---------------------------------------------------------------------------  
