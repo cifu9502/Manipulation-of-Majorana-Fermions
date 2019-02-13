@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: apsrev4-1.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -10,8 +10,8 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: mainNotes.bib
-Database file #2: Majorana_DQD.bib.bib
-I was expecting a `,' or a `}'---line 55 of file Majorana_DQD.bib.bib
+Database file #2: Majorana_DQD.bib
+I was expecting a `,' or a `}'---line 55 of file Majorana_DQD.bib
  : 
  : @article{beenakker_search_2013,
 (Error may have been on previous line)
@@ -29,45 +29,45 @@ Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
 Warning--missing publisher in spielman_algorithms_2010
-You've used 37 entries,
+You've used 38 entries,
             5847 wiz_defined-function locations,
-            1901 strings with 24400 characters,
-and the built_in function-call counts, 38710 in all, are:
-= -- 2271
-> -- 1174
-< -- 293
-+ -- 373
-- -- 309
-* -- 6224
-:= -- 3694
-add.period$ -- 35
-call.type$ -- 37
-change.case$ -- 145
-chr.to.int$ -- 45
-cite$ -- 38
-duplicate$ -- 3600
-empty$ -- 2795
-format.name$ -- 669
-if$ -- 7695
+            1910 strings with 24801 characters,
+and the built_in function-call counts, 39791 in all, are:
+= -- 2337
+> -- 1207
+< -- 300
++ -- 383
+- -- 317
+* -- 6400
+:= -- 3797
+add.period$ -- 36
+call.type$ -- 38
+change.case$ -- 149
+chr.to.int$ -- 46
+cite$ -- 39
+duplicate$ -- 3699
+empty$ -- 2874
+format.name$ -- 688
+if$ -- 7912
 int.to.chr$ -- 1
-int.to.str$ -- 44
-missing$ -- 480
-newline$ -- 157
-num.names$ -- 105
-pop$ -- 1438
+int.to.str$ -- 45
+missing$ -- 493
+newline$ -- 160
+num.names$ -- 108
+pop$ -- 1478
 preamble$ -- 1
-purify$ -- 175
+purify$ -- 180
 quote$ -- 0
-skip$ -- 1362
+skip$ -- 1399
 stack$ -- 0
-substring$ -- 884
-swap$ -- 3524
-text.length$ -- 145
+substring$ -- 910
+swap$ -- 3622
+text.length$ -- 149
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 540
+type$ -- 555
 warning$ -- 2
-while$ -- 109
+while$ -- 112
 width$ -- 0
-write$ -- 336
+write$ -- 344
 (There was 1 error message)
