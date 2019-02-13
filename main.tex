@@ -3,7 +3,7 @@
 \documentclass[showpacs,aps,prb,reprint,superscriptaddress]{revtex4-1}
 %\documentclass[showpacs,aps,prl,reprint,superscriptaddress,showkeys,floatfix,citeautoscript]{revtex4-1}
 \usepackage{bm}
-\usepackage{subfig}
+%\usepackage{subfig} % LUIS: This package messes with the captions.
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{amsmath,amssymb,amstext}
@@ -61,7 +61,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{ Manipulation of Majorana zero modes in  double quantum dots }
+\title{ Manipulation of Majorana zero-modes using double quantum dots }
 
 \author{Jesus D. Cifuentes}
 \affiliation{Instituto de F\'{\i}sica, Universidade de S\~{a}o Paulo,
@@ -129,14 +129,19 @@ One of the most promising methods to detect MZMs consists in attaching a quantum
 \TS{Here's what we did: quantum tunneling of a MZM into a double dot shows several possibilities for manipulation of MZM}
 
 
- The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). Tunneling Majorana modes in these basic structures have inspired theoretical studies \cite{silva_andreev_2016,ivanov_coherent_2017} and experimental setups confirming the observations of Andreev molecules \cite{su_andreev_2017}. Even though quantum tunneling of a MZM into a double dot shows several possibilities for manipulation of MZM,  there is still no complete analysis of the transitions of the Majorana signatures between the QDs in this model. In this paper we fill this gap by performing a transport study of a DQD coupled to a MZM and a metallic lead FIG.\ref{fig:GenModel}). The simplicity of this model allows us to explore analytically different geometries of QD's from linear couplings to T-junctions (FIG.\ref{fig:MajoranaModels}). We considered both non-interacting and interacting regimes, observing major agreement between both approaches about the location of the Majorana signature. While the non-interacting regime is suitable to obtain exact expressions for the Green function, the interacting case  shows how the Majorana signature co-exists with strongly correlated phenomena such as the Kondo effect \cite{hewson_kondo_1997} and RKKY interactions.   \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} 
+ The simplest case where Majorana manipulation is possible is in a double quantum dot (DQD). Tunneling Majorana modes in these basic structures have inspired theoretical studies \cite{silva_andreev_2016,ivanov_coherent_2017} and experimental setups confirming the observations of Andreev molecules \cite{su_andreev_2017}. Even though quantum tunneling of a MZM into a double dot shows several possibilities for manipulation of MZM,  there is still no complete analysis of the transitions of the Majorana signatures between the QDs in this model. 
+ 
+ 
+ In this paper, we explore the different possibilities for Majorana manipulation in a device consisting of a DQD coupled to a MZM and a metallic lead (See Fig.\ \ref{fig:GenModel}). The simplicity of this model allows us to explore analytically different geometries of QD's from linear couplings to T-junctions (Fig.\ \ref{fig:MajoranaModels}). We considered both non-interacting and interacting regimes, observing major agreement between both approaches about the location of the Majorana signature.
+ 
+ We performed a detailed study of the non-interacting DQD limit, by using Zubarev's procedure  \cite{zubarev_double-time_1960} to provide an algebraic procedure to calculate the spectral functions. For the interacting case, we resort to numerical renormalization group (NRG)\cite{bulla_numerical_2008} calculations for this model.
+ While the non-interacting regime is suitable to obtain exact expressions for the Green function, the interacting case  shows how the Majorana signature co-exists with strongly correlated phenomena such as the Kondo effect \cite{hewson_kondo_1997} and RKKY interactions.   \cite{ruderman_indirect_1954,kasuya_theory_1956,yosida_magnetic_1957} 
 
-This paper is organized as follows. In \ref{sec:modelmethods} we describe our model of a DQD coupled to a MZM and a metalic lead . This model is studied through the ballistic transport \cite{zubarev_double-time_1960} approach (non-interacting) in \ref{sec:non-interactingMethods} and the numerical renormalization group (NRG)\cite{bulla_numerical_2008} in the interacting case \ref{sec:NRG-interacting}. The results are presented in section \ref{sec:results} where we compare the non-interacting density of states (DOS) \ref{subsect:non-int} with the low-energy  interacting results \ref{subsec:Interacting}. 
+
+This paper is organized as follows. In Sec.\ \ref{sec:modelmethods} we describe the model of a DQD coupled to a MZM and to a metallic lead, as well as the methods used.  The results are presented in section \ref{sec:results} where we compare the non-interacting density of states (DOS) \ref{subsect:non-int} with the low-energy  interacting results \ref{subsec:Interacting}. Finally, our conclusions are given in Sec.\ \ref{sec:Conclusions}.
 
 
   % So far, no complete analysis of this simple case has been done. The goal of this  project is to fill this gap by realizing a full quantum transport study of the effects of coupling a Majorana mode with a double quantum dot.  By tuning the QD gate voltages and the Majorana couplings we will be able to probe the mobility of the Majoranamodes through the dots. 
-
-
 
 
 
@@ -286,75 +291,99 @@ This paper is organized as follows. In \ref{sec:modelmethods} we describe our mo
 \section{Model and methods}
 \label{sec:modelmethods}
 
-%\LUIS{Jesus, put the description of the system and the Hamiltonian here. Put a schematic figure of the DQD setup as well}
 
-We consider the setup shown in Figure \ref{fig:GenModel} in which an MZM at the edge of Topological Superconductor(TS) is coupled to a double quantum dot (DQD) attached to a single metallic lead. The Hamiltonian of this system can be partitioned in four terms: the DQD Hamiltonian $H_{DQD}$ , the Lead Hamiltonian $H_{Lead}$ , the DQD-lead interaction  $H_{DQD-Lead}$ and the coupling between the DQD and the Majorana mode $H_{M-DQDs}$ and   
+We consider the setup shown in Figure \ref{fig:GenModel}, in which a single MZM $\gamma_1$ located at the edge of a 1D topological superconductor is coupled to a double quantum dot (DQD) attached to a single metallic lead. The Hamiltonian of the entire system can be expressed as:
+%
 \begin{equation}
-H=H_{DQD}+H_{Lead}+H_{DQD-Lead}+H_{M-DQD} 
+H=H_{\rm DQD}+H_{\rm lead}+H_{\rm DQD-lead}+H_{\rm M-DQD} 
 \label{eq:Model}
 \end{equation}
+%
+where the different terms describe, respectively, the (interacting) DQD, the (non-interacting) metallic lead, and the DQD-lead and DQD-MZM couplings:
+%The interacting Anderson Model describes the DQD-lead system  
+%d_{i\sigma}^{\dagger}d_{i\sigma}
+\begin{align}
+%\begin{split}
+    H_{\rm DQD} =& \!  \sum_{\substack{i\!=\! 1,2 \\ \sigma \!=\! \dw , \up }} \left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma} + \frac{U_i}{2}\left(\sum_{\sigma} \hat{n}_{i\sigma}-1\right)^{2} \\ \nonumber
+& + \sum_{\sigma} \tdots(\dann_{1\sigma}  d_{2\sigma}+\dann_{2\sigma}  d_{1\sigma}) \; , \\ \nonumber
+H_{\rm lead} =&  \sum_{\mathbf{k}\sigma }\epsilon_{\mathbf{k}}c_{\mathbf{k}\sigma}^{\dagger}c_{\mathbf{k}\sigma }  \; , \\ \nonumber
+H_{\rm DQD-lead} =&  \sum_{\mathbf{k}\sigma }\sum_{i\!=\!1,2 }V_{i\textbf{k}} c_{\mathbf{k}\sigma }^{\dagger}d_{i\sigma}+V^*_{i\textbf{k}} d_{i\sigma}^{\dagger}c_{\mathbf{k}\sigma } \; , \\ \nonumber
+H_{\rm M-DQD} =&  \sum_{i=1}^2t_{i} \left(d_{i\downarrow}^{\dagger}\gamma_{1}+\gamma_{1}d_{i\downarrow}\right) \; .
+%
+\label{eq:H_DQD}
+\end{align}
+
+
+%
+
+In the equations above, $\ed{i}$ is the energy level of dot $i$, $U_i$ is the Coulomb repulsion and $\tdots$ is the coupling parameter between both QDs. The operator $\dann_{i\sigma}$ creates a particle in dot $i$ with spin $\sigma$ and $\hat{n}_{i\sigma}:=d_{i\sigma}^{\dagger}d_{i\sigma}$ is the particle number operator of state $i$.  $c_{\mathbf{k}\sigma }^{\dagger}$ is the creation operator a particle with momentum $\mathbf{k}$ and spin
+$\sigma$ in the lead.  $\epsilon_{\mathbf{k}l}$ is the corresponding energy
+ and $V_i(\textbf{k})$ describes the tunneling coupling between the lead and dot $i$ . \\
 
 
 %-----------F I G U R E  1 ------
-\begin{figure}[bt]
+\begin{figure}[t]
 \begin{center}
 \includegraphics[scale=0.4]{Graficos/GenModel.png}
+\end{center}
 \caption{ Model for the DQD-Majorana system. Solid lines: Hopping interactions ($t_{dots}$: inter-dot coupling , $V_1,V_2$ couplings of QD1 and QD2 with the lead. ). Dashed lines: Majorana spin-$\dw$ effective couplings \eqref{eq:H_MDQD} $t_1,t_2$. The atomic energy levels appear inside each QD $\ep_1, \ep_2$ are tuned by the gate voltages. The coulomb interaction is represented by $U_1,U_2$.  The red dashed horizontal lines represent the Fermi level.
 }
 %
 \label{fig:GenModel}
-\end{center}
 \end{figure}
 %-----------E N D  F I G U R E  1 ------
-The interacting Anderson Model describes the DQD-lead system  
-%d_{i\sigma}^{\dagger}d_{i\sigma}
-\begin{align}
-\begin{split}
-    H_{DQD}=&  \sum_{i\in\{1,2\}} \sum_{\sigma\in \{ \dw , \up\}}  \left(\epsilon_{di}+\frac{U_i}{2}\right)\hat{n}_{i\sigma}+ \frac{U_i}{2}(\sum_{\sigma} \hat{n}_{i\sigma}-1)^{2} \\ 
-&\ \ \ \ \ + \sum_{\sigma \in \{\up , \dw\}} \tdots(\dann_{1\sigma}  d_{2\sigma}+\dann_{2\sigma}  d_{1\sigma}), \label{eq:H_DQD}
-\end{split}
-\end{align}
 
-and 
-\begin{eqnarray}
-H_{Lead} & = & \sum_{\mathbf{k}\sigma }\epsilon_{\mathbf{k}}c_{\mathbf{k}\sigma }^{\dagger}c_{\mathbf{k}\sigma } \label{eq:H_L}\\ 
-H_{DQD-Lead} & = &  \sum_{\mathbf{k}\sigma }\sum_{i\in\{1,2\}}V_{i\textbf{k}} c_{\mathbf{k}\sigma }^{\dagger}d_{i\sigma}+V^*_{i\textbf{k}} d_{i\sigma}^{\dagger}c_{\mathbf{k}\sigma }  \label{eq:H_DQDL},
-\end{eqnarray}
-%
-where $\ed{i}$ is the energy level of dot $i$, $U_i$ is the Coulomb repulsion and $\tdots$ is the coupling parameter between both QDs. The operator $\dann_{i\sigma}$ creates a particle in dot $i$ with spin $\sigma$ and $\hat{n}_{i\sigma}:=d_{i\sigma}^{\dagger}d_{i\sigma}$ is the particle number operator of state $i$.  $c_{\mathbf{k}\sigma }^{\dagger}$ is the creation operator a particle with momentum $\mathbf{k}$ and spin
-$\sigma$ in the lead.  $\epsilon_{\mathbf{k}l}$ is the corresponding energy
- and $V_i(\textbf{k})$ describes the tunneling coupling between the lead and dot $i$ . \\
 
 % To model the interaction between the DQD and the Majorana Mode we define the Majorana operators as the
 
-The Majorana modes are modeled as a superposition of the creation and annihilation operators of a spin $\dw$ particle $f_\dw$
+It is sometimes useful to recast the last term in Eq.\ (\ref{eq:Model}) in terms of (Dirac) fermionic operators. Following Refs. \onlinecite{lee_kondo_2013,ruiz-tijerina_interaction_2015}, we choose to write the Majorana zero modes $\gamma_1$ and $\gamma_2$ as a superposition of the creation ($f^{\dagger}_\dw$) and annihilation ($f^{ }_\dw$) operators of a spin $\dw$ fermion:
+%
 \begin{equation}
-    \gamma_1 := \frac{1}{\sqrt{2}} \left( f^\dagger_{\dw} + f_{\dw}\ \right) , \gamma_2 := \frac{i}{\sqrt{2}} \left( f^\dagger_{\dw} - f_{\dw} \right). \label{eq:MajOp}
+    \gamma_1 := \frac{1}{\sqrt{2}} \left( f^\dagger_{\dw} + f_{\dw}\ \right) \; , \gamma_2 := \frac{i}{\sqrt{2}} \left( f^\dagger_{\dw} - f_{\dw} \right) \; . \label{eq:MajOp}
 \end{equation}
 
 
-This makes possible to define an effective coupling between the Majorana Mode and the DQD by attaching $\gamma_1$ with the spin-$\dw$ channel in the QDs
+In this representation, the effective coupling between the MZM $\gamma_1$ and the DQD becomes:
+%by attaching $\gamma_1$ with the spin-$\dw$ channel in the DQD:
 
 %H_{TS} & = & 2\epsilon_{m}\gamma_{1}\gamma_{2}\nonumber \\
 \begin{eqnarray}
-	H_{M-DQD} & = &  \sum_{i=1}^2t_{i} \left(d_{i\downarrow}^{\dagger}\gamma_{1}+\gamma_{1}d_{i\downarrow}\right) + \epsilon_M \gamma_1\gamma_2. 
+	H_{\rm M-DQD} & = &  
+	%\sum_{i=1}^2t_{i} %\left(d_{i\downarrow}^{\dagger}\gamma_{1}+\gamma_{1}d_{i\downarrow}\right) + %\epsilon_M \gamma_1\gamma_2. 
 	% \\
-	% & = &  \sum_{i}t_{i} \left(d_{i\downarrow}^{\dagger}f^\dagger_{\dw} + 
-	% f_{\downarrow}d_{i\dw} +d_{i\downarrow}^{\dagger}f_{\dw}+
-	% +f_{\downarrow}^{\dagger} d_{i\downarrow}\right).
+\sum_{i}t_{i} \left(d_{i\downarrow}^{\dagger}f^\dagger_{\dw} + 
+	 f_{\downarrow}d_{i\dw} +d_{i\downarrow}^{\dagger}f_{\dw}+
+	 f_{\downarrow}^{\dagger} d_{i\downarrow}\right) \; , 
 	\label{eq:H_MDQD}
 \end{eqnarray}
-where $t_i$ is the coupling parameter between the Majorana mode and QD $i$. $\epsilon_m$ is the coupling energy between both Majorana modes.
+where $t_i$ is the coupling parameter between the Majorana mode and QD $i$. %$\epsilon_m$ is the coupling energy between both Majorana modes.
+
+Given the model, the quantities of interest to be calculated are the spein-resolved spectral functions (or, equivalently, the local density of states) of the quantum dots. These will give us information of the presence/absence of MZMs ``leaking'' from the edge of the TS into the dots \cite{liu_detecting_2011,vernek_subtle_2014,ruiz-tijerina_interaction_2015}. As usual, the spectral function for spin $\sigma$ in dot $i$ is defined as:
+%
+%
+\begin{equation}
+    \rho_{i \sigma}(\omega)\equiv-\frac{1}{\pi} \textrm{Im} \left[G_{d_{i \sigma},d_{i \sigma}^\dagger}(\omega)\right].
+    \label{eq:SpecFunc}
+\end{equation}
+%
+where $G_{d_{i \sigma},d_{i \sigma}^\dagger}(\omega) \equiv \langle\langle d_{i \sigma},d_{i \sigma}^\dagger} \rangle \rangle_\omega$ is the retarded (diagonal) Green's function involving dot $i$ operators $d_{i \sigma}$ and $d_{i \sigma}^\dagger}$. Next, we describe the procedures for calculating  $\rho_{i \sigma}(\omega)$ in the regimes of weak ($U_i \ll V$) and strong ($U_i \! \gg\! V$) electron-electron interaction in the dots.
+
 
 % ----------------------------------------------------------------------------------------------------------
  % ----------------------------------METHODS------------------------------------------------------------------
 % --------------------------------------------------------------------------------------------------------------
 % \newpage
-\subsection{Methods }
 
-\subsection{Non-interacting system \label{sec:non-interactingMethods}}
+\subsection{Non-interacting limit: Equations of motion }
+\label{sec:non-interactingMethods}
 
-Using Zubarev's ballistic transport approach \cite{zubarev_double-time_1960}, we derived an exact expression for the Green functions associated to both quantum dot operators $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$.  The detailed procedure is included in Appendix \ref{sec:Appendix_alg}. The transport equations define a $9 \times 9$ linear system where the Hamiltonian parameters $(t_1,t_2,\epsilon_1 \ldots)$ and the energy $\omega$ are taken as algebraic variables. The solution of this type of equations is a polynomial fraction of the same degree which makes difficult to provide an exact solution using analytical or numerical methods. To bypass this problem, we associated this transport system to a flow graph and executed a Graph-Gauss-Jordan elimination process \cite{spielman_algorithms_2010}.  This method proofed to be efficient to solve complex transport systems since the graph structure allows us to identify minimum cutting points  and create an algorithmic representation of the Green function. 
+In the non-interacting limit ($U_i\!=\!0$), we can obtain analytic expressions for the spectral densities defined in Eq.\ (\ref{eq:SpecFunc}). Using Zubarev's equation of motion (EOM) approach \cite{zubarev_double-time_1960}, we can derive  exact expressions for the Green functions associated to both quantum dot operators $(\Green{d_1d^\dagger_1},\Green{d_2d^\dagger_2})$. 
+
+The detailed procedure is described in Appendix \ref{sec:Appendix_alg}. The EOM  equations define a $9 \times 9$ linear system where the Hamiltonian parameters $(t_1,t_2,\epsilon_1 \ldots)$ and the energy $\omega$ are taken as algebraic variables. The solution for these types of equations is a polynomial fraction of the same degree, which makes it difficult to provide an exact solution using either analytic or numerical methods. 
+
+To bypass this problem, we associated the quantum dot system to a ``flow graph'' and used a Graph-Gauss-Jordan elimination process \cite{spielman_algorithms_2010}.  This method proved to be efficient in solving complex transport systems of coupled Green's functions since the graph structure allows us to identify minimum cutting points  and create an algorithmic representation of the Green function. 
+
+\LUIS{Stopped here. To be continued...}
 
 % This idea also brings new perspectives to the theory of Majorana systems since the Majorana fermion is an articulation point in the graph that communicates creation and annihilation operators
 
@@ -411,7 +440,8 @@ In our results we observe several times these two types of signatures. Type I of
 
 
 
-\subsection{Interacting case (NRG) \label{sec:NRG-interacting}}
+\subsection{Interacting limit: Wilson's NRG }
+\label{sec:NRG-interacting}
 
 % For the interacting case, we used the Numerical Renormalization Group (NRG) approach \cite{wilson_renormalization_1975,sindel_numerical_2005,bulla_numerical_2008}.
 
