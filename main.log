@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  13 FEB 2019 22:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  14 FEB 2019 19:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -779,7 +779,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<Graficos/GenModel.png, id=152, 543.4704pt x 390.9807pt>
+<Graficos/GenModel.png, id=154, 543.4704pt x 390.9807pt>
 File: Graficos/GenModel.png Graphic file (type png)
 
 <use Graficos/GenModel.png>
@@ -815,7 +815,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 406.
 
-<Graficos/MajoranaModels.png, id=188, 479.391pt x 180.675pt>
+<Graficos/MajoranaModels.png, id=190, 479.391pt x 180.675pt>
 File: Graficos/MajoranaModels.png Graphic file (type png)
 
 <use Graficos/MajoranaModels.png>
@@ -825,7 +825,7 @@ Package pdftex.def Info: Graficos/MajoranaModels.png used on input line 431.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Graficos/t1=t2.png, id=189, 491.436pt x 491.436pt>
+<Graficos/t1=t2.png, id=191, 491.436pt x 491.436pt>
 File: Graficos/t1=t2.png Graphic file (type png)
  <use Graficos/t1=t2.png>
 Package pdftex.def Info: Graficos/t1=t2.png used on input line 442.
@@ -836,13 +836,13 @@ Package pdftex.def Info: Graficos/t1=t2.png used on input line 442.
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
  on input line 451.
 
-<Graficos/t1>0.png, id=213, 491.436pt x 491.436pt>
+<Graficos/t1>0.png, id=215, 491.436pt x 491.436pt>
 File: Graficos/t1>0.png Graphic file (type png)
  <use Graficos/t1>0.png>
 Package pdftex.def Info: Graficos/t1>0.png used on input line 460.
 (pdftex.def)             Requested size: 235.8866pt x 235.8866pt.
 
-<Graficos/t2>0.png, id=222, 503.7219pt x 491.436pt>
+<Graficos/t2>0.png, id=224, 503.7219pt x 491.436pt>
 File: Graficos/t2>0.png Graphic file (type png)
  <use Graficos/t2>0.png>
 Package pdftex.def Info: Graficos/t2>0.png used on input line 475.
@@ -854,14 +854,14 @@ Package pdftex.def Info: Graficos/t2>0.png used on input line 475.
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
  on input line 485.
 
-<Graficos/NRG-t1=t2.png, id=251, 607.7907pt x 390.9807pt>
+<Graficos/NRG-t1=t2.png, id=253, 607.7907pt x 390.9807pt>
 File: Graficos/NRG-t1=t2.png Graphic file (type png)
 
 <use Graficos/NRG-t1=t2.png>
 Package pdftex.def Info: Graficos/NRG-t1=t2.png used on input line 500.
 (pdftex.def)             Requested size: 243.11197pt x 156.3895pt.
 
-<Graficos/N2t1=t2.png, id=252, 574.948pt x 567.721pt>
+<Graficos/N2t1=t2.png, id=254, 574.948pt x 567.721pt>
 File: Graficos/N2t1=t2.png Graphic file (type png)
 
 <use Graficos/N2t1=t2.png>
@@ -872,7 +872,7 @@ Overfull \hbox (12.7242pt too wide) in paragraph at lines 512--513
  [] 
  []
 
-<Graficos/b)Nt1>0.png, id=257, 542.025pt x 469.755pt>
+<Graficos/b)Nt1>0.png, id=259, 542.025pt x 469.755pt>
 File: Graficos/b)Nt1>0.png Graphic file (type png)
 
 <use Graficos/b)Nt1>0.png>
@@ -883,7 +883,7 @@ Package pdftex.def Info: Graficos/b)Nt1>0.png used on input line 524.
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
  on input line 540.
 
-<Graficos/b)Nt2>0.png, id=289, 552.1428pt x 469.755pt>
+<Graficos/b)Nt2>0.png, id=291, 552.1428pt x 469.755pt>
 File: Graficos/b)Nt2>0.png Graphic file (type png)
 
 <use Graficos/b)Nt2>0.png>
@@ -916,7 +916,7 @@ See the babel package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.387   Kondo Problem to Heavy Fermions}}}}
+l.396   Kondo Problem to Heavy Fermions}}}}
                                            \ (\bibinfo  {publisher} {Cambridge
 Your command will be ignored, type <return> to proceed
 
@@ -930,12 +930,12 @@ See the babel package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.387   Kondo Problem to Heavy Fermions}}}}
+l.396   Kondo Problem to Heavy Fermions}}}}
                                            \ (\bibinfo  {publisher} {Cambridge
 You may proceed, but expect unexpected results
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 386--391
+Underfull \hbox (badness 2351) in paragraph at lines 395--400
  \OT1/cmr/m/n/9 (Cam-bridge Uni-ver-sity Press, 1997) google-Books-ID:
  []
 
@@ -948,40 +948,45 @@ Overfull \hbox (12.15707pt too wide) detected at line 630
 [] [] \OML/cmm/m/it/10 ;
  []
 
-<Graficos/Graph_DQD-Pro.png, id=376, 937.25156pt x 752.0597pt>
+<Graficos/Graph_DQD-Pro.png, id=377, 937.25156pt x 752.0597pt>
 File: Graficos/Graph_DQD-Pro.png Graphic file (type png)
 
 <use Graficos/Graph_DQD-Pro.png>
 Package pdftex.def Info: Graficos/Graph_DQD-Pro.png used on input line 649.
 (pdftex.def)             Requested size: 234.31232pt x 188.01447pt.
- [8 <./Graficos/Graph_DQD-Pro.png>]
-<Graficos/Graphs-DQD-M-Pro.png, id=404, 837.1275pt x 672.26157pt>
+
+<Graficos/Graphs-DQD-M-Pro.png, id=382, 837.1275pt x 672.26157pt>
 File: Graficos/Graphs-DQD-M-Pro.png Graphic file (type png)
 
 <use Graficos/Graphs-DQD-M-Pro.png>
 Package pdftex.def Info: Graficos/Graphs-DQD-M-Pro.png used on input line 687.
 (pdftex.def)             Requested size: 242.76076pt x 194.95085pt.
- [9 <./Graficos/Graphs-DQD-M-Pro.png>]
+ [8]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 695.
+
+[9 <./Graficos/Graph_DQD-Pro.png> <./Graficos/Graphs-DQD-M-Pro.png>] [10]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 782.
 
 (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 782.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 782.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8EDA8B7CDD733B5CE383B3B09FB48D3D;1124.
+(rerunfilecheck)             Checksum: 9CD343346B38B35DC55645BAB8D376AA;1126.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19410 strings out of 494910
- 353606 string characters out of 6179835
- 435983 words of memory out of 5000000
- 22246 multiletter control sequences out of 15000+600000
+ 19418 strings out of 494910
+ 353769 string characters out of 6179835
+ 444109 words of memory out of 5000000
+ 22252 multiletter control sequences out of 15000+600000
  15404 words of font info for 56 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 55i,15n,54p,1466b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,54p,1484b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texli
@@ -1004,10 +1009,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti9.pfb>
-Output written on main.pdf (9 pages, 1535586 bytes).
+Output written on main.pdf (10 pages, 1536386 bytes).
 PDF statistics:
- 528 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
- 107 named destinations out of 1000 (max. 500000)
+ 538 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 

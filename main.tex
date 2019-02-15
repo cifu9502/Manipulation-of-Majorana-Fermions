@@ -61,7 +61,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{ Manipulation of Majorana zero modes in  double quantum dots }
+\title{ Manipulation of a Majorana zero mode in a  double quantum dot }
 
 \author{Jesus D. Cifuentes}
 \affiliation{Instituto de F\'{\i}sica, Universidade de S\~{a}o Paulo,
@@ -113,7 +113,7 @@ These signatures are characterized by the emergence of robust zero modes localiz
 
 \TS{MZMs in quantum dots can co-exist with Kondo peaks.}
 
-One of the most promising methods to detect MZMs consists in attaching a quantum dot (QD) to the edges of a Majorana chain in the topological phase and executing transport measurements through the QD. \cite{liu_detecting_2011}  In such arrangement the MZM at the end of the chain leaks inside the ,QD \cite{vernek_subtle_2014} which produces a zero-bias conductance peak of half a quanta $\frac{e^{2}}{2h}$ through the dot. Recent  experiments including hybrid Majorana-QD systems \cite{deng_majorana_2016,su_andreev_2017} have increase the expectations on this method which could bring the following advantages: 1) The qubit information  is not completely destroyed, in contrast to other detection methods such as tunneling spectroscopy. 2) If performed under the  Kondo temperature $T_k$, it allows to observe the co-existance of the MZM with Kondo effect. \cite{lee_kondo_2013,gorski_interplay_2018} We showed in a previous project that it is possible to separate both  effects by inducing a  Zeeman magnetic field to quench the Kondo effect. \cite{ruiz-tijerina_interaction_2015} 3) Today’s precise experimental control over the QD parameters allows the manipulation of the MZMs inside multi-dot systems. Hence bringing new lights into the design of scalable quantum architectures. \cite{barkeshli_physical_2015,karzig_scalable_2017}  
+One of the most promising methods to detect MZMs consists in attaching a quantum dot (QD) to the edges of a Majorana chain in the topological phase and executing transport measurements through the QD. \cite{liu_detecting_2011}  In such arrangement the MZM at the end of the chain leaks inside the ,QD \cite{vernek_subtle_2014} which produces a zero-bias conductance peak of half a quanta $\frac{e^{2}}{2h}$ through the dot. Recent  experiments including hybrid Majorana-QD systems \cite{deng_majorana_2016,su_andreev_2017} have increase the expectations on this method which could bring the following advantages: 1) The qubit information  is not completely destroyed, in contrast to other detection methods such as tunneling spectroscopy. 2) If performed under the  Kondo temperature $T_k$, it allows to observe the co-existance of the MZM with Kondo effect. \cite{lee_kondo_2013,gorski_interplay_2018} We showed in a previous project that it is possible to separate both  effects by inducing a  Zeeman magnetic field to quench the Kondo effect. \cite{ruiz-tijerina_interaction_2015} 3) Today’s precise experimental control overs QD's parameters allows the manipulation of MZMs inside multi-dot systems. This idea has brought new lights into the design of scalable quantum architectures \cite{barkeshli_physical_2015,karzig_scalable_2017} and the implementation of braiding protocols \cite{malciu_braiding_2018} using QD-Majorana systems.
 
 
 \LUIS{Ok. Ref. \onlinecite{karzig_scalable_2017} is PRB of scalable designs: PRB \textbf{95} 235305 (2017). }
@@ -429,7 +429,7 @@ To  improve the efficiency of the code we used the symmetries of the system to m
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=0.5]{Graficos/MajoranaModels.png}
-	\caption{\label{fig:MajoranaModels}  Cases of study: (a) Symmetric coupling of the DQD to the lead and the MZM. No inter-dot coupling. (b)\&(c) Indirect coupling of the second QD through the first dot. The Majorana is coupled to the (b) first dot or to the (c) second dot. 
+	\caption{\label{fig:MajoranaModels}  Cases of study: (a) Symmetric coupling of the DQD to the lead and the MZM. No inter-dot coupling. (b)\&(c) Indirect coupling of the second QD through the first dot. The Majorana is coupled to the first dot (b), forming a T-junction,  or to the second dot (c) forming a linear connection MZM-QD2-QD1-Lead. 
 	}
 	%
 \end{center}
@@ -563,9 +563,9 @@ We call MZM manipulation to the "movements" attributed to the Majorana signature
 Comparing the exact analytical solution in the non-interacting system and the NRG results for interacting quantum dots, we were able to characterized the displacements of the MZM inside the double quantum dot for the three setups in FIG.\ref{fig:MajoranaModels}. We observe a considerable agreement on the location of the Majorana signature between the interacting and non-interacting results:
 
 \begin{itemize}
-	\item[]FIG.\ref{fig:MajoranaModels}(a): In the symmetric coupling the MZM leaks inside both dots. For interacting dots, the Majorana signature will be distinguishable near the Kondo temperature. At this regime the system presents combined Kondo-Majorana physics . If the gate voltage of one dot is turned on the MZM is induced to tunnel only into the other dot.  
-	\item[]FIG.\ref{fig:MajoranaModels}(b): In this system the spin-$\up$ zero mode at QD1 (The Kondo peak if the system is interacting) is destroyed by quantum interference with the second dot. This interference will also destroy the MZM in the first dot but a type I Majorana signature will still appear in the second dot. The Majorana mode can be induced to tunnel back into the first dot if a gate voltage is applied on the second dot. This signature is visible at very low energies (bellow $0.1\Gamma_1$) in interacting case. 
-	\item[]FIG.\ref{fig:MajoranaModels}(c): An indirect type II Majorana signature is observed in the first dot. This signature is robust, specially in the interacting case, where it is present in all configurations. 
+	\item[]FIG.\ref{fig:MajoranaModels}(a): In the symmetric coupling the MZM leaks inside both dots. For interacting dots, the Majorana signature will be distinguishable near the Kondo temperature. At this regime the system presents combined Kondo-Majorana physics . If the gate voltage of one dot is turned on, the MZM is induced to tunnel only into the other dot. This dot will preserve a  type I signature of $\frac{\rho_\up(0)}{\rho_\dw(0)}$ near to $2$ for values of $\ep_2$ where the zero mode does not overlap with the Coulomb peak,
+	\item[]FIG.\ref{fig:MajoranaModels}(b): In this system the spin-$\up$ zero mode at QD1 (The Kondo peak if the system is interacting) is destroyed by quantum interference with the second dot. This interference will also destroy the MZM in the first dot but a type I Majorana signature will still appear in the second dot. The Majorana mode can be induced to tunnel back into the first dot if a gate voltage is applied onto the second dot. This signature is visible at very low energies (bellow $0.1\Gamma_1$) in the interacting case. 
+	\item[]FIG.\ref{fig:MajoranaModels}(c): An  indirect type II Majorana signature is observed in the first dot. This signature is robust in the interacting case, hence appearing at all configurations despite the induced gate voltages.  
 
 \end{itemize}
 
